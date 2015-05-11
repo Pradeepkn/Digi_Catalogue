@@ -48,15 +48,14 @@
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view {
-  //create new view if no view is available for recycling
-  if (view == nil) {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.carousel.frame.origin.x, self.carousel.frame.origin.y, (self.carousel.frame.size.width * 1.9), self.carousel.frame.size.height)];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.image = [UIImage imageNamed:@"banner1.png"];
-    view = imageView;
-  }
-
-  return view;
+    //create new view if no view is available for recycling
+    if (view == nil)
+    {
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(self.carousel.frame.origin.x, self.view.frame.size.height/2, self.view.frame.size.width*1.5, self.view.frame.size.height/3)];
+        ((UIImageView *)view).image = [UIImage imageNamed:@"banner1.png"];
+        view.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return view;
 }
 
 - (void)didReceiveMemoryWarning {

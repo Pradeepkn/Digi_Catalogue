@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "iCarousel.h"
+#import "FXImageView.h"
+
 @interface HomeViewController : BaseViewController
 
 @end

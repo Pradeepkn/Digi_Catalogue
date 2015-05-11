@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -19,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tzh-f5-KIC">
                                 <rect key="frame" x="0.0" y="160" width="600" height="440"/>
-                                <color key="backgroundColor" red="0.94161238609999998" green="0.9943137661" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.90980392160000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xlB-lj-dNH">
                                     <size key="itemSize" width="160" height="220"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -46,13 +46,12 @@
                                                         <constraint firstAttribute="height" constant="21" id="CFY-GN-8Gh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="textColor" red="0.097519148149999998" green="0.4435724707" blue="0.56105404010000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fth-E0-eb1">
                                                     <rect key="frame" x="0.0" y="197" width="160" height="21"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="textColor" red="0.097519148149999998" green="0.4435724707" blue="0.56105404010000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.27389071132596687" green="0.27389071132596687" blue="0.27389071132596687" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -92,24 +91,23 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="YyZ-4h-fMq"/>
                                         </constraints>
-                                        <color key="barTintColor" red="0.097519148149999998" green="0.4435724707" blue="0.56105404010000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="barTintColor" red="0.67479476427292817" green="0.60092939756550312" blue="0.23413261944855021" alpha="1" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="86a-EJ-PyK" id="af8-HQ-uLN"/>
                                         </connections>
                                     </searchBar>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w18-Ml-Del">
-                                        <rect key="frame" x="180" y="113" width="240" height="29"/>
+                                        <rect key="frame" x="20" y="113" width="560" height="41"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="8Ox-oM-NeW"/>
-                                            <constraint firstAttribute="height" constant="28" id="d7q-W4-iHh"/>
+                                            <constraint firstAttribute="height" constant="40" id="d7q-W4-iHh"/>
                                         </constraints>
                                         <segments>
                                             <segment title="Price"/>
                                             <segment title="Purity"/>
                                             <segment title="Name"/>
                                         </segments>
-                                        <color key="tintColor" red="0.097519148149999998" green="0.4435724707" blue="0.56105404010000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGF-lL-0rS">
                                         <rect key="frame" x="8" y="84" width="584" height="21"/>
@@ -117,22 +115,28 @@
                                             <constraint firstAttribute="height" constant="21" id="xRq-zl-8Og"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                        <color key="textColor" red="0.097519148149999998" green="0.4435724707" blue="0.56105404010000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.97708635880000005" green="0.97569491330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.90980392160000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="w18-Ml-Del" secondAttribute="trailing" constant="20" id="EEz-U5-TW7"/>
                                     <constraint firstAttribute="height" constant="160" id="G3b-IA-LuZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Rwn-PL-toj" secondAttribute="trailing" id="OtY-xe-7Nj"/>
                                     <constraint firstAttribute="centerX" secondItem="w18-Ml-Del" secondAttribute="centerX" id="Y6u-0k-wLw"/>
                                     <constraint firstItem="oGF-lL-0rS" firstAttribute="top" secondItem="Rwn-PL-toj" secondAttribute="bottom" constant="20" id="a2p-hL-cEd"/>
                                     <constraint firstItem="Rwn-PL-toj" firstAttribute="leading" secondItem="MDF-eH-bG1" secondAttribute="leading" id="itd-sC-JwR"/>
+                                    <constraint firstItem="w18-Ml-Del" firstAttribute="leading" secondItem="MDF-eH-bG1" secondAttribute="leading" constant="20" id="jI7-12-23b"/>
                                     <constraint firstAttribute="trailing" secondItem="oGF-lL-0rS" secondAttribute="trailing" constant="8" id="pqJ-3D-8PR"/>
                                     <constraint firstItem="oGF-lL-0rS" firstAttribute="leading" secondItem="MDF-eH-bG1" secondAttribute="leading" constant="8" id="qB3-aL-Kzo"/>
                                     <constraint firstItem="Rwn-PL-toj" firstAttribute="top" secondItem="MDF-eH-bG1" secondAttribute="top" id="wYp-xJ-4b7"/>
                                     <constraint firstItem="w18-Ml-Del" firstAttribute="top" secondItem="oGF-lL-0rS" secondAttribute="bottom" constant="8" id="zcm-f1-b0b"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Y6u-0k-wLw"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,7 +182,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" red="0.097519148149999998" green="0.4435724707" blue="0.56105404010000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rIj-Eq-ZZF" customClass="ProductListTableViewCell">
@@ -189,10 +193,10 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xY-Ot-8Rr">
                                             <rect key="frame" x="20" y="13" width="560" height="20"/>
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                            <color key="textColor" red="0.1236010283" green="0.56220767439999997" blue="0.71111015190000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.99607843139999996" green="0.90980392160000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="9xY-Ot-8Rr" secondAttribute="bottom" constant="10" id="90X-hU-bY4"/>
                                         <constraint firstItem="9xY-Ot-8Rr" firstAttribute="top" secondItem="ufp-Xh-lmA" secondAttribute="top" constant="13" id="97a-Sa-R2X"/>
@@ -223,7 +227,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XLp-CM-aVy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.40784313729999999" green="0.59607843140000005" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.67479476429999996" green="0.60092939759999997" blue="0.23413261939999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>

@@ -1,22 +1,21 @@
 //
-//  LoginViewController.m
+//  FeedBackViewController.m
 //  Digi_Catalogue
 //
-//  Created by Pradeep on 13/04/15.
+//  Created by Pradeep on 11/05/15.
 //  Copyright (c) 2015 Brinvents. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "FeedBackViewController.h"
 
-@interface LoginViewController ()
+@interface FeedBackViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation FeedBackViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mod.png"]];
     // Do any additional setup after loading the view.
 }
 

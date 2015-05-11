@@ -10,6 +10,10 @@
 #import "HomeViewController.h"
 #import "SplitViewController.h"
 #import "SettingViewController.h"
+#import "FeedBackViewController.h"
+
+static NSString *const kMainStoryBoard = @"Main";
+static NSString *const kSplitViewStoryBoard = @"SplitViewStoryBoard";
 
 @interface TabBarController ()
 
@@ -21,30 +25,31 @@
   [super viewDidLoad];
   NSMutableArray *tabbarItems = [NSMutableArray array];
 
-  HomeViewController *homeVC = (HomeViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
+  HomeViewController *homeVC = (HomeViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
 
-  SplitViewController *splitVC1 = (SplitViewController *)[[UIStoryboard storyboardWithName:@"SplitViewStoryBoard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
+  SplitViewController *splitVC1 = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
   splitVC1.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:1];
 
-  SplitViewController *splitVC2 = (SplitViewController *)[[UIStoryboard storyboardWithName:@"SplitViewStoryBoard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
+  SplitViewController *splitVC2 = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
   splitVC2.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:2];
 
-  SplitViewController *splitVC3 = (SplitViewController *)[[UIStoryboard storyboardWithName:@"SplitViewStoryBoard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
-  NSLog(@"%@", splitVC3.viewControllers);
-
+  SplitViewController *splitVC3 = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
   splitVC3.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemHistory tag:3];
 
-  SplitViewController *splitVC4 = (SplitViewController *)[[UIStoryboard storyboardWithName:@"SplitViewStoryBoard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
+  SplitViewController *splitVC4 = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
   splitVC4.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:4];
 
-  SettingViewController *settingVC = (SettingViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SettingViewController class])];
+  SettingViewController *settingVC = (SettingViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SettingViewController class])];
 
+  FeedBackViewController *feedbackVC = (FeedBackViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([FeedBackViewController class])];
+    
   [tabbarItems addObject:homeVC];
   [tabbarItems addObject:splitVC1];
   [tabbarItems addObject:splitVC2];
   [tabbarItems addObject:splitVC3];
   [tabbarItems addObject:splitVC4];
   [tabbarItems addObject:settingVC];
+  [tabbarItems addObject:feedbackVC];
 
   [self setViewControllers:tabbarItems animated:YES];
   // Do any additional setup after loading the view.
