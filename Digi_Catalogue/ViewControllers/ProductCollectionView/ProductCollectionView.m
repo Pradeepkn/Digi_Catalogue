@@ -10,9 +10,12 @@
 #import "GalleryItemCollectionViewCell.h"
 #import "UIImage+ProportionalFill.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "Constant.h"
+#import "DataManager.h"
 
 @interface ProductCollectionView () {
   NSMutableArray *_galleryItems;
+    HomeViewType homeType;
 }
 
 @property(weak, nonatomic) IBOutlet UICollectionView *galleryCollectionView;
@@ -24,7 +27,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
+  homeType = [[DataManager sharedInstance] getCollectionViewType];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -40,7 +43,28 @@
   //  NSString *url = @"";
   //  [cell.galleryImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"mod.png"]];
   cell.imageTitle.text = @"Purity: 22 kr";
-  cell.galleryImageView.image = [cell.galleryImageView.image imageToFitSize:cell.galleryImageView.frame.size method:MGImageResizeCrop];
+  UIImage *banner1 = [UIImage imageNamed:@"banner1"];
+  UIImage *banner2 = [UIImage imageNamed:@"banner2"];
+  UIImage *banner3 = [UIImage imageNamed:@"banner3"];
+  UIImage *banner4 = [UIImage imageNamed:@"banner4"];
+    switch (homeType) {
+        case GoldViewTab:
+            cell.galleryImageView.image = [banner1 imageToFitSize:cell.galleryImageView.frame.size method:MGImageResizeCrop];
+            break;
+        case SilverViewTab:
+            cell.galleryImageView.image = [banner2 imageToFitSize:cell.galleryImageView.frame.size method:MGImageResizeCrop];
+            break;
+        case DiamondViewTab:
+            cell.galleryImageView.image = [banner3 imageToFitSize:cell.galleryImageView.frame.size method:MGImageResizeCrop];
+            break;
+        case PlatinumViewTab:
+            cell.galleryImageView.image = [banner4 imageToFitSize:cell.galleryImageView.frame.size method:MGImageResizeCrop];
+            break;
+            
+        default:
+            break;
+    }
+
   cell.priceLabel.text = [NSString stringWithFormat:@"Price: र %@", @"28,000"];
   return cell;
 }

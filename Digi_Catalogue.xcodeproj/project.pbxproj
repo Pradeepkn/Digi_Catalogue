@@ -33,7 +33,6 @@
 		271982BC1ADC6C1E00C0FB3C /* ProductCategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271982AB1ADC6C1E00C0FB3C /* ProductCategoryListViewController.m */; };
 		271982BD1ADC6C1E00C0FB3C /* ProductCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 271982AD1ADC6C1E00C0FB3C /* ProductCollectionView.m */; };
 		271982BE1ADC6C1E00C0FB3C /* ProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 271982AF1ADC6C1E00C0FB3C /* ProductListTableViewCell.m */; };
-		271982BF1ADC6C1E00C0FB3C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271982B21ADC6C1E00C0FB3C /* SettingViewController.m */; };
 		271982C01ADC6C1E00C0FB3C /* SilverSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271982B51ADC6C1E00C0FB3C /* SilverSplitViewController.m */; };
 		273558191ADB15790059FBE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 273558181ADB15790059FBE7 /* main.m */; };
 		2735581F1ADB15790059FBE7 /* Digi_Catalogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2735581D1ADB15790059FBE7 /* Digi_Catalogue.xcdatamodeld */; };
@@ -43,6 +42,8 @@
 		273558361ADB157A0059FBE7 /* Digi_CatalogueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 273558351ADB157A0059FBE7 /* Digi_CatalogueTests.m */; };
 		276E64E51B011035002B1D06 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276E64E41B011035002B1D06 /* FeedBackViewController.m */; };
 		27889B911B03ED79000E6717 /* ProductItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27889B901B03ED79000E6717 /* ProductItemCell.m */; };
+		27889B951B040498000E6717 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27889B941B040498000E6717 /* DataManager.m */; };
+		27889B991B040881000E6717 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27889B981B040881000E6717 /* SettingViewController.m */; };
 		279D96321ADD4CEF00124B4C /* SplitViewStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279D96311ADD4CEF00124B4C /* SplitViewStoryBoard.storyboard */; };
 		279D96351ADD524000124B4C /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279D96341ADD524000124B4C /* TabBarController.m */; };
 		279D96391ADD53E900124B4C /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279D96381ADD53E900124B4C /* SplitViewController.m */; };
@@ -104,8 +105,6 @@
 		271982AD1ADC6C1E00C0FB3C /* ProductCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionView.m; sourceTree = "<group>"; };
 		271982AE1ADC6C1E00C0FB3C /* ProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListTableViewCell.h; sourceTree = "<group>"; };
 		271982AF1ADC6C1E00C0FB3C /* ProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListTableViewCell.m; sourceTree = "<group>"; };
-		271982B11ADC6C1E00C0FB3C /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		271982B21ADC6C1E00C0FB3C /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		271982B41ADC6C1E00C0FB3C /* SilverSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SilverSplitViewController.h; sourceTree = "<group>"; };
 		271982B51ADC6C1E00C0FB3C /* SilverSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SilverSplitViewController.m; sourceTree = "<group>"; };
 		273558131ADB15790059FBE7 /* Digi_Catalogue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digi_Catalogue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +121,11 @@
 		276E64E41B011035002B1D06 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
 		27889B8F1B03ED79000E6717 /* ProductItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductItemCell.h; sourceTree = "<group>"; };
 		27889B901B03ED79000E6717 /* ProductItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductItemCell.m; sourceTree = "<group>"; };
+		27889B931B040498000E6717 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		27889B941B040498000E6717 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		27889B961B0404CB000E6717 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		27889B971B040881000E6717 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		27889B981B040881000E6717 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		279D96311ADD4CEF00124B4C /* SplitViewStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplitViewStoryBoard.storyboard; sourceTree = "<group>"; };
 		279D96331ADD524000124B4C /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarController.h; path = TabBarController/TabBarController.h; sourceTree = "<group>"; };
 		279D96341ADD524000124B4C /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarController.m; path = TabBarController/TabBarController.m; sourceTree = "<group>"; };
@@ -326,8 +330,8 @@
 		271982B01ADC6C1E00C0FB3C /* SettingViewController */ = {
 			isa = PBXGroup;
 			children = (
-				271982B11ADC6C1E00C0FB3C /* SettingViewController.h */,
-				271982B21ADC6C1E00C0FB3C /* SettingViewController.m */,
+				27889B971B040881000E6717 /* SettingViewController.h */,
+				27889B981B040881000E6717 /* SettingViewController.m */,
 			);
 			path = SettingViewController;
 			sourceTree = "<group>";
@@ -364,6 +368,7 @@
 		273558151ADB15790059FBE7 /* Digi_Catalogue */ = {
 			isa = PBXGroup;
 			children = (
+				27889B921B040474000E6717 /* UtilityClass */,
 				270066B21ADCF45E0070BCB2 /* Category */,
 				271982591ADC3D0000C0FB3C /* StoryBoard */,
 				271982501ADC3CF200C0FB3C /* AppDelegate */,
@@ -410,6 +415,16 @@
 				276E64E41B011035002B1D06 /* FeedBackViewController.m */,
 			);
 			path = FeedBackViewController;
+			sourceTree = "<group>";
+		};
+		27889B921B040474000E6717 /* UtilityClass */ = {
+			isa = PBXGroup;
+			children = (
+				27889B931B040498000E6717 /* DataManager.h */,
+				27889B941B040498000E6717 /* DataManager.m */,
+				27889B961B0404CB000E6717 /* Constant.h */,
+			);
+			path = UtilityClass;
 			sourceTree = "<group>";
 		};
 		279D96361ADD524D00124B4C /* TabBarController */ = {
@@ -584,7 +599,6 @@
 				273558191ADB15790059FBE7 /* main.m in Sources */,
 				271982BD1ADC6C1E00C0FB3C /* ProductCollectionView.m in Sources */,
 				27E5235F1AF0078700D33D67 /* MZLoadingCircle.m in Sources */,
-				271982BF1ADC6C1E00C0FB3C /* SettingViewController.m in Sources */,
 				271982581ADC3CF200C0FB3C /* BaseViewController.m in Sources */,
 				271982BE1ADC6C1E00C0FB3C /* ProductListTableViewCell.m in Sources */,
 				27E523601AF0078700D33D67 /* FXImageView.m in Sources */,
@@ -597,6 +611,7 @@
 				27E523631AF0078700D33D67 /* FlickrPhoto.m in Sources */,
 				27889B911B03ED79000E6717 /* ProductItemCell.m in Sources */,
 				276E64E51B011035002B1D06 /* FeedBackViewController.m in Sources */,
+				27889B991B040881000E6717 /* SettingViewController.m in Sources */,
 				27E523641AF0078700D33D67 /* BDUtility.m in Sources */,
 				271982BA1ADC6C1E00C0FB3C /* PlatinumSplitViewController.m in Sources */,
 				271982B81ADC6C1E00C0FB3C /* HomeViewController.m in Sources */,
@@ -604,6 +619,7 @@
 				279D96351ADD524000124B4C /* TabBarController.m in Sources */,
 				271982BC1ADC6C1E00C0FB3C /* ProductCategoryListViewController.m in Sources */,
 				27E523611AF0078700D33D67 /* UIImage+FX.m in Sources */,
+				27889B951B040498000E6717 /* DataManager.m in Sources */,
 				271982B71ADC6C1E00C0FB3C /* GoldSplitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

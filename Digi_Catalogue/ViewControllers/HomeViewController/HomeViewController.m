@@ -62,13 +62,27 @@
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view {
-    //create new view if no view is available for recycling
     if (view == nil)
     {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(self.carousel.frame.origin.x, self.view.frame.size.height/2, self.view.frame.size.width*1.5, self.view.frame.size.height/3)];
-        ((UIImageView *)view).image = (UIImage *)[self.arrayOfImages objectAtIndex:index];
-        view.contentMode = UIViewContentModeScaleAspectFit;
+        FXImageView *imageView = [[FXImageView alloc] initWithFrame:CGRectMake(self.carousel.frame.origin.x, self.view.frame.size.height/2, self.view.frame.size.width*1.5, self.view.frame.size.height/3)];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.asynchronous = YES;
+        imageView.reflectionScale = 0.5f;
+        imageView.reflectionAlpha = 0.25f;
+        imageView.reflectionGap = 10.0f;
+        imageView.shadowOffset = CGSizeMake(0.0f, 2.0f);
+        imageView.shadowBlur = 5.0f;
+        imageView.cornerRadius = 5.0f;
+        view = imageView;
     }
+    
+    //show placeholder
+    ((FXImageView *)view).processedImage = [UIImage imageNamed:@"placeholder.png"];
+    
+    //set image
+    ((FXImageView *)view).image = self.arrayOfImages[index];
+//    self.itemLable.text  = [NSString stringWithFormat:@"%@",[self.self.arrayOfImages objectAtIndex:0]];
+    
     return view;
 }
 

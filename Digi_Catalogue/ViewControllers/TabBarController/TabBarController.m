@@ -11,6 +11,7 @@
 #import "SplitViewController.h"
 #import "SettingViewController.h"
 #import "FeedBackViewController.h"
+#import "DataManager.h"
 
 static NSString *const kMainStoryBoard = @"Main";
 static NSString *const kSplitViewStoryBoard = @"SplitViewStoryBoard";
@@ -25,35 +26,68 @@ static NSString *const kSplitViewStoryBoard = @"SplitViewStoryBoard";
   [super viewDidLoad];
   NSMutableArray *tabbarItems = [NSMutableArray array];
 
-  HomeViewController *homeVC = (HomeViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
+    HomeViewController *homeVC = (HomeViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
+    homeVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:1];
 
-  SplitViewController *splitVC1 = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
-  splitVC1.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:1];
+    SplitViewController *goldVC = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
+    goldVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:2];
 
-  SplitViewController *splitVC2 = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
-  splitVC2.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:2];
+    SplitViewController *silverVC = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
+    silverVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:3];
 
-  SplitViewController *splitVC3 = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
-  splitVC3.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemHistory tag:3];
+    SplitViewController *diamondVC = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
+    diamondVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemHistory tag:4];
 
-  SplitViewController *splitVC4 = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
-  splitVC4.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:4];
+    SplitViewController *platinumVC = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
+    platinumVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:5];
 
-  SettingViewController *settingVC = (SettingViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SettingViewController class])];
+    SettingViewController *settingVC = (SettingViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SettingViewController class])];
+    settingVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:6];
 
-  FeedBackViewController *feedbackVC = (FeedBackViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([FeedBackViewController class])];
+    FeedBackViewController *feedbackVC = (FeedBackViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([FeedBackViewController class])];
+    feedbackVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:7];
     
   [tabbarItems addObject:homeVC];
-  [tabbarItems addObject:splitVC1];
-  [tabbarItems addObject:splitVC2];
-  [tabbarItems addObject:splitVC3];
-  [tabbarItems addObject:splitVC4];
+  [tabbarItems addObject:goldVC];
+  [tabbarItems addObject:silverVC];
+  [tabbarItems addObject:diamondVC];
+  [tabbarItems addObject:platinumVC];
   [tabbarItems addObject:settingVC];
   [tabbarItems addObject:feedbackVC];
 
   [self setViewControllers:tabbarItems animated:YES];
   // Do any additional setup after loading the view.
 }
+
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    switch (item.tag) {
+        case 1:
+            [[DataManager sharedInstance] setHomeViewType:HomeViewTab];
+            break;
+        case 2:
+            [[DataManager sharedInstance] setHomeViewType:GoldViewTab];
+            break;
+        case 3:
+            [[DataManager sharedInstance] setHomeViewType:SilverViewTab];
+            break;
+        case 4:
+            [[DataManager sharedInstance] setHomeViewType:DiamondViewTab];
+            break;
+        case 5:
+            [[DataManager sharedInstance] setHomeViewType:PlatinumViewTab];
+            break;
+        case 6:
+            [[DataManager sharedInstance] setHomeViewType:SettingsViewTab];
+            break;
+        case 7:
+            [[DataManager sharedInstance] setHomeViewType:FeedbackViewTab];
+            break;
+        default:
+            break;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
