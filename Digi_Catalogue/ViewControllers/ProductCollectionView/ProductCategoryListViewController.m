@@ -8,8 +8,19 @@
 
 #import "ProductCategoryListViewController.h"
 #import "ProductListTableViewCell.h"
+#import "ProductItemCell.h"
 
-@interface ProductCategoryListViewController ()
+#define NUM_TOP_ITEMS 20
+#define NUM_SUBITEMS 4
+
+@interface ProductCategoryListViewController (){
+    NSArray *topItems;
+    NSArray *topItemsText;
+    NSMutableArray *subItems; // array of arrays
+    NSInteger currentExpandedIndex;
+    NSMutableIndexSet *expandedSections;
+}
+@property(nonatomic, assign) BOOL isMenwear;
 
 @end
 
@@ -18,11 +29,153 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  // Uncomment the following line to preserve selection between presentations.
-  // self.clearsSelectionOnViewWillAppear = NO;
+    if (!expandedSections) {
+        expandedSections = [[NSMutableIndexSet alloc] init];
+    }
+    topItems = [[NSArray alloc] initWithArray:[self topLevelItems]];
+    topItemsText = [[NSArray alloc] initWithArray:[self menTopLevelItems]];
+    subItems = [NSMutableArray new];
+    currentExpandedIndex = -1;
+    
+    for (int i = 0; i <= [topItems count]; i++) {
+        switch (i) {
+            case 0:
+                [subItems addObject:[self menTopWearSubItems]];
+                break;
+            case 1:
+                [subItems addObject:[self menBottomWearSubItems]];
+                break;
+            case 2:
+                [subItems addObject:[self menFootWearSubItems]];
+                break;
+            case 3:
+                [subItems addObject:[self menAccessoriesSubItems]];
+                break;
+            default:
+                break;
+        }
+    }
 
-  // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-  // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+#pragma mark - Data generators
+
+- (NSArray *)topLevelItems {
+    NSArray *items;
+    
+    if (self.isMenwear) {
+        items = @[
+                  @"menshirts.png",
+                  @"menpants.png",
+                  @"menshoes.png",
+                  @"menaccessories.png"
+                  ];
+    } else {
+        items = @[
+                  @"womentopwear.png",
+                  @"womenbottomwear.png",
+                  @"womenfootwear.png",
+                  @"womenaccessories.png"
+                  ];
+    }
+    return items;
+}
+
+- (NSArray *)menTopLevelItems {
+    NSArray *items = @[ @"Topwear", @"Bottomwear", @"Footwear", @"Accessories" ];
+    return items;
+}
+
+- (NSArray *)menTopWearSubItems {
+    NSArray *sItems;
+    if (self.isMenwear) {
+        sItems = @[
+                   @"Casual Shirts",
+                   @"T Shirts & Collered Tees",
+                   @"Formal Shirts",
+                   @"Kurthas",
+                   @"Inner & Sleepwear",
+                   @"Gym & Sportswear"
+                   ];
+    } else {
+        sItems = @[
+                   @"Shirts, Tops & Tees",
+                   @"Dresses",
+                   @"Salwars & Chridas",
+                   @"Kurthas, Kurtis & Suits",
+                   @"Shrugs & Jackets",
+                   @"Sarees",
+                   @"Ethnic Wear",
+                   @"Winter Wear"
+                   ];
+    }
+    return sItems;
+}
+
+- (NSArray *)menBottomWearSubItems {
+    NSArray *sItems;
+    if (self.isMenwear) {
+        sItems = @[ @"Jeans", @"Pants/Trousers", @"Shorts", @"Track Pants" ];
+    } else {
+        sItems =
+        @[ @"Capris", @"Jeans", @"Jeggings", @"Shorts & Skirts", @"Trousers" ];
+    }
+    return sItems;
+}
+
+- (NSArray *)menFootWearSubItems {
+    NSArray *sItems;
+    if (self.isMenwear) {
+        sItems = @[
+                   @"Casual Shoes",
+                   @"Sports Shoes",
+                   @"Formal Shoes",
+                   @"Casual & Sports Sandals",
+                   @"Slippers & Flip Flops"
+                   ];
+    } else {
+        sItems = @[
+                   @"Sandals",
+                   @"Wedges",
+                   @"All Heels",
+                   @"Flats & Ballets",
+                   @"Slippers & Flip Flops",
+                   @"Casual Shoes",
+                   @"Boots",
+                   @"Socks"
+                   ];
+    }
+    return sItems;
+}
+
+- (NSArray *)menAccessoriesSubItems {
+    NSArray *sItems;
+    if (self.isMenwear) {
+        sItems = @[
+                   @"Belts, Ties & Cufflinks",
+                   @"Jewellery",
+                   @"Sunglasses",
+                   @"Wallets",
+                   @"Watches"
+                   ];
+    } else {
+        sItems = @[
+                   @"Bags & Wallets",
+                   @"Cosmetics & Perfumes",
+                   @"Jewellery",
+                   @"Sunglasses",
+                   @"Watches"
+                   ];
+    }
+    return sItems;
+}
+
+#pragma mark - View management
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,20 +186,100 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  // Return the number of sections.
-  return 4;
+    return [topItems count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  // Return the number of rows in the section.
-  return 1;
+- (CGFloat)tableView:(UITableView *)tableView
+heightForHeaderInSection:(NSInteger)section {
+    CGFloat headerHeight = 60.0f;
+    return headerHeight;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    if ([self tableView:tableView canCollapseSection:section]) {
+        if ([expandedSections containsIndex:section]) {
+            return [[subItems objectAtIndex:section] count];
+        }
+    }
+    return 0;
+}
+
+- (BOOL)tableView:(UITableView *)tableView
+canCollapseSection:(NSInteger)section {
+    if (section >= 0)
+        return YES;
+    
+    return NO;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    ProductItemCell *productCell = (ProductItemCell *)
+    [tableView dequeueReusableCellWithIdentifier:@"ProductItem"];
+    productCell.productType.text = [topItemsText objectAtIndex:section];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(0, 0, 320, 100)];
+    [btn setTag:section];
+    [productCell addSubview:btn];
+    [btn addTarget:self
+            action:@selector(sectionTapped:)
+    forControlEvents:UIControlEventTouchDown];
+    return productCell;
+}
+
+- (void)sectionTapped:(UIButton *)button {
+    NSInteger sectionIndex = button.tag;
+    BOOL currentlyExpanded = [expandedSections containsIndex:sectionIndex];
+    //  [self.tableView beginUpdates];
+    if ([self tableView:self.tableView canCollapseSection:sectionIndex]) {
+        NSInteger rows;
+        NSMutableArray *tmpArray = [NSMutableArray array];
+        if (currentlyExpanded) {
+            rows = [self tableView:self.tableView numberOfRowsInSection:sectionIndex];
+            [expandedSections removeIndex:sectionIndex];
+            
+        } else {
+            [expandedSections addIndex:sectionIndex];
+            rows = [self tableView:self.tableView numberOfRowsInSection:sectionIndex];
+        }
+        
+        for (int i = 0; i < rows; i++) {
+            NSIndexPath *tmpIndexPath =
+            [NSIndexPath indexPathForRow:i inSection:sectionIndex];
+            [tmpArray addObject:tmpIndexPath];
+        }
+        if (currentlyExpanded) {
+            [self.tableView deleteRowsAtIndexPaths:tmpArray
+                                  withRowAnimation:UITableViewRowAnimationTop];
+            
+        } else {
+            [self.tableView insertRowsAtIndexPaths:tmpArray
+                                  withRowAnimation:UITableViewRowAnimationTop];
+        }
+    }
+    //  [self.tableView endUpdates];
+    [self.tableView reloadData];
+    NSIndexPath *indexPath =
+    [NSIndexPath indexPathForRow:NSNotFound inSection:sectionIndex];
+    [self.tableView scrollToRowAtIndexPath:indexPath
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
+}
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"ProductList" sender:nil];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   ProductListTableViewCell *cell = (ProductListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-  cell.categoryTitleLabel.text = @"Test";
-  // Configure the cell...
+  cell.categoryTitleLabel.text = [[subItems objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];;
+    cell.categoryTitleLabel.textColor = [UIColor blackColor];
+    cell.contentView.backgroundColor = [UIColor whiteColor];
 
   return cell;
 }

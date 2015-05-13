@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B7A8C26E09C33DEFC1F634C0"
+               BlueprintIdentifier = "8FA073DFBAF5CEC9352D9A0F"
                BuildableName = "libPods-Digi_Catalogue-jastor.a"
                BlueprintName = "Pods-Digi_Catalogue-jastor"
                ReferencedContainer = "container:Pods.xcodeproj">

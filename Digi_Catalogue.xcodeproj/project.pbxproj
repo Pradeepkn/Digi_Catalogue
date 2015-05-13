@@ -42,6 +42,7 @@
 		2735582A1ADB15790059FBE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273558281ADB15790059FBE7 /* LaunchScreen.xib */; };
 		273558361ADB157A0059FBE7 /* Digi_CatalogueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 273558351ADB157A0059FBE7 /* Digi_CatalogueTests.m */; };
 		276E64E51B011035002B1D06 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276E64E41B011035002B1D06 /* FeedBackViewController.m */; };
+		27889B911B03ED79000E6717 /* ProductItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27889B901B03ED79000E6717 /* ProductItemCell.m */; };
 		279D96321ADD4CEF00124B4C /* SplitViewStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279D96311ADD4CEF00124B4C /* SplitViewStoryBoard.storyboard */; };
 		279D96351ADD524000124B4C /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279D96341ADD524000124B4C /* TabBarController.m */; };
 		279D96391ADD53E900124B4C /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279D96381ADD53E900124B4C /* SplitViewController.m */; };
@@ -119,8 +120,10 @@
 		273558351ADB157A0059FBE7 /* Digi_CatalogueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Digi_CatalogueTests.m; sourceTree = "<group>"; };
 		276E64E31B011035002B1D06 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
 		276E64E41B011035002B1D06 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
+		27889B8F1B03ED79000E6717 /* ProductItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductItemCell.h; sourceTree = "<group>"; };
+		27889B901B03ED79000E6717 /* ProductItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductItemCell.m; sourceTree = "<group>"; };
 		279D96311ADD4CEF00124B4C /* SplitViewStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplitViewStoryBoard.storyboard; sourceTree = "<group>"; };
-		279D96331ADD524000124B4C /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarController.h; path = ViewControllers/TabBarController/TabBarController.h; sourceTree = "<group>"; };
+		279D96331ADD524000124B4C /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarController.h; path = TabBarController/TabBarController.h; sourceTree = "<group>"; };
 		279D96341ADD524000124B4C /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarController.m; path = TabBarController/TabBarController.m; sourceTree = "<group>"; };
 		279D96371ADD53E900124B4C /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
 		279D96381ADD53E900124B4C /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
@@ -211,8 +214,9 @@
 		271982561ADC3CF200C0FB3C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				279D96361ADD524D00124B4C /* TabBarController */,
+				2719829E1ADC6C1D00C0FB3C /* HomeViewController */,
 				271982A11ADC6C1E00C0FB3C /* LoginViewController */,
+				279D96361ADD524D00124B4C /* TabBarController */,
 				271982A71ADC6C1E00C0FB3C /* ProductCollectionView */,
 				2719829B1ADC6C1D00C0FB3C /* GoldViewController */,
 				271982981ADC6C1D00C0FB3C /* DiamondViewController */,
@@ -279,8 +283,7 @@
 				2719829F1ADC6C1D00C0FB3C /* HomeViewController.h */,
 				271982A01ADC6C1E00C0FB3C /* HomeViewController.m */,
 			);
-			name = HomeViewController;
-			path = ViewControllers/HomeViewController;
+			path = HomeViewController;
 			sourceTree = "<group>";
 		};
 		271982A11ADC6C1E00C0FB3C /* LoginViewController */ = {
@@ -304,6 +307,8 @@
 		271982A71ADC6C1E00C0FB3C /* ProductCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				27889B8F1B03ED79000E6717 /* ProductItemCell.h */,
+				27889B901B03ED79000E6717 /* ProductItemCell.m */,
 				271982AA1ADC6C1E00C0FB3C /* ProductCategoryListViewController.h */,
 				271982AB1ADC6C1E00C0FB3C /* ProductCategoryListViewController.m */,
 				271982AC1ADC6C1E00C0FB3C /* ProductCollectionView.h */,
@@ -364,8 +369,6 @@
 				271982501ADC3CF200C0FB3C /* AppDelegate */,
 				271982531ADC3CF200C0FB3C /* BaseViewController */,
 				271982561ADC3CF200C0FB3C /* ViewControllers */,
-				2719829E1ADC6C1D00C0FB3C /* HomeViewController */,
-				279D96331ADD524000124B4C /* TabBarController.h */,
 				273558261ADB15790059FBE7 /* Images.xcassets */,
 				2735581D1ADB15790059FBE7 /* Digi_Catalogue.xcdatamodeld */,
 				273558161ADB15790059FBE7 /* Supporting Files */,
@@ -412,6 +415,7 @@
 		279D96361ADD524D00124B4C /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				279D96331ADD524000124B4C /* TabBarController.h */,
 				279D96341ADD524000124B4C /* TabBarController.m */,
 			);
 			name = TabBarController;
@@ -591,6 +595,7 @@
 				271982571ADC3CF200C0FB3C /* AppDelegate.m in Sources */,
 				27E523621AF0078700D33D67 /* Flickr.m in Sources */,
 				27E523631AF0078700D33D67 /* FlickrPhoto.m in Sources */,
+				27889B911B03ED79000E6717 /* ProductItemCell.m in Sources */,
 				276E64E51B011035002B1D06 /* FeedBackViewController.m in Sources */,
 				27E523641AF0078700D33D67 /* BDUtility.m in Sources */,
 				271982BA1ADC6C1E00C0FB3C /* PlatinumSplitViewController.m in Sources */,

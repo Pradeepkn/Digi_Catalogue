@@ -108,7 +108,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="0.59417443600368314" green="0.50631579186407161" blue="0.31775703103860203" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.86727396280000002" blue="0.60333745049999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ewI-vC-1A5" secondAttribute="trailing" constant="8" id="0wi-db-QzN"/>
                                     <constraint firstItem="pOM-Fq-z2Z" firstAttribute="leading" secondItem="gb4-WN-6Rm" secondAttribute="leading" constant="8" id="1ga-uK-BF0"/>
@@ -149,6 +149,9 @@
                                     <constraint firstItem="0d9-GI-Lny" firstAttribute="top" secondItem="ewI-vC-1A5" secondAttribute="bottom" constant="10" id="tfb-yr-3Bt"/>
                                     <constraint firstItem="0d9-GI-Lny" firstAttribute="width" secondItem="ADr-xo-EPH" secondAttribute="width" id="vVg-XP-nBc"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1g-jV-vDg">
                                 <rect key="frame" x="40" y="94" width="300" height="399"/>
@@ -243,7 +246,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.82108943370165743" green="0.69967760580884331" blue="0.43910832385354998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.86727396280000002" blue="0.60333745049999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="mTh-yT-vjH" firstAttribute="leading" secondItem="J1g-jV-vDg" secondAttribute="leading" constant="8" id="1dA-pV-PiS"/>
                                     <constraint firstItem="kMg-dL-RnP" firstAttribute="top" secondItem="kbp-ZV-h5b" secondAttribute="bottom" constant="8" id="3P2-VQ-1Sb"/>
@@ -276,6 +279,9 @@
                                     <constraint firstItem="o6W-Ub-fA7" firstAttribute="leading" secondItem="J1g-jV-vDg" secondAttribute="leading" constant="8" id="yCa-42-GYa"/>
                                     <constraint firstAttribute="bottom" secondItem="MaO-Ba-qQo" secondAttribute="bottom" constant="20" id="zo6-IK-8Kk"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBU-VW-r0b">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -321,6 +327,9 @@
                                     <constraint firstAttribute="centerX" secondItem="Gh4-B7-gsM" secondAttribute="centerX" id="gCc-bY-y8p"/>
                                     <constraint firstAttribute="centerY" secondItem="Gh4-B7-gsM" secondAttribute="centerY" id="yqR-ye-oJ9"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.90980392160000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
