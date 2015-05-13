@@ -23,16 +23,30 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
-  [super viewDidLoad];
-  self.carousel.type = iCarouselTypeCylinder;
-
-  // Do any additional setup after loading the view.
+    [super viewDidLoad];
+    self.carousel.type = iCarouselTypeCylinder;
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(animateBackgroundImages) userInfo:nil repeats:YES];
 }
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
-  self.arrayOfImages = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"banner1.png"], [UIImage imageNamed:@"banner2.png"], [UIImage imageNamed:@"banner3.png"], [UIImage imageNamed:@"banner4.png"], [UIImage imageNamed:@"banner5.png"], [UIImage imageNamed:@"banner6.png"], nil];
+    self.arrayOfImages = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"banner1.png"], [UIImage imageNamed:@"banner2.png"], [UIImage imageNamed:@"banner3.png"], [UIImage imageNamed:@"banner4.png"], [UIImage imageNamed:@"banner5.png"], [UIImage imageNamed:@"banner6.png"], nil];
 
-  return [self.arrayOfImages count];
+    return [self.arrayOfImages count];
+}
+
+- (void)animateBackgroundImages {
+    NSMutableArray *emmaImagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"banner1.png"], [UIImage imageNamed:@"banner2.png"],[UIImage imageNamed:@"banner3.png"],[UIImage imageNamed:@"banner4.png"],[UIImage imageNamed:@"banner5.png"],[UIImage imageNamed:@"banner6.png"],nil];
+    NSInteger randomNumber = arc4random() % 6;
+    UIImage *image = (UIImage *)[emmaImagesArray objectAtIndex:randomNumber];
+    [UIView animateWithDuration:1 animations:^{
+        CATransition *transition = [CATransition animation];
+        transition.duration = 3.0f;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        transition.type = kCATransitionFade;
+        self.offersImageView.image = image;
+        [self.offersImageView.layer addAnimation:transition forKey:nil];
+        [self.offersImageView startAnimating];
+    }];
 }
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
@@ -52,7 +66,7 @@
     if (view == nil)
     {
         view = [[UIImageView alloc] initWithFrame:CGRectMake(self.carousel.frame.origin.x, self.view.frame.size.height/2, self.view.frame.size.width*1.5, self.view.frame.size.height/3)];
-        ((UIImageView *)view).image = [UIImage imageNamed:@"banner1.png"];
+        ((UIImageView *)view).image = (UIImage *)[self.arrayOfImages objectAtIndex:index];
         view.contentMode = UIViewContentModeScaleAspectFit;
     }
     return view;

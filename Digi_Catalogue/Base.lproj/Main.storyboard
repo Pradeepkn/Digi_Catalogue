@@ -24,6 +24,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SB3-66-IUp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <view hidden="YES" alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gb4-WN-6Rm">
                                 <rect key="frame" x="40" y="94" width="300" height="399"/>
                                 <subviews>
@@ -164,7 +167,7 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vMJ-5A-JZb">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vMJ-5A-JZb">
                                         <rect key="frame" x="8" y="78" width="284" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Ywp-ip-i0X"/>
@@ -172,7 +175,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX7-XH-bQU">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX7-XH-bQU">
                                         <rect key="frame" x="8" y="128" width="284" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -336,15 +339,22 @@
                         <constraints>
                             <constraint firstItem="gb4-WN-6Rm" firstAttribute="top" secondItem="e5w-mb-pgV" secondAttribute="bottom" constant="30" id="7Yw-6K-LwG"/>
                             <constraint firstAttribute="trailing" secondItem="SBU-VW-r0b" secondAttribute="trailing" id="7qi-4s-X3b"/>
+                            <constraint firstItem="SB3-66-IUp" firstAttribute="leading" secondItem="FZM-nb-EpY" secondAttribute="leading" id="JeM-uz-bE4"/>
+                            <constraint firstItem="BUP-wz-SDJ" firstAttribute="top" secondItem="SB3-66-IUp" secondAttribute="bottom" id="L2x-80-sab"/>
                             <constraint firstItem="J1g-jV-vDg" firstAttribute="top" secondItem="e5w-mb-pgV" secondAttribute="bottom" constant="30" id="QaJ-YM-jaM"/>
                             <constraint firstItem="BUP-wz-SDJ" firstAttribute="top" secondItem="SBU-VW-r0b" secondAttribute="bottom" id="SRp-IU-Poy"/>
                             <constraint firstItem="SBU-VW-r0b" firstAttribute="leading" secondItem="FZM-nb-EpY" secondAttribute="leading" id="Sqg-oK-SZ6"/>
+                            <constraint firstAttribute="trailing" secondItem="SB3-66-IUp" secondAttribute="trailing" id="ZIu-Is-juQ"/>
                             <constraint firstItem="gb4-WN-6Rm" firstAttribute="leading" secondItem="FZM-nb-EpY" secondAttribute="leading" constant="40" id="arO-HA-80n"/>
                             <constraint firstItem="SBU-VW-r0b" firstAttribute="top" secondItem="FZM-nb-EpY" secondAttribute="top" id="bEu-xA-6jI"/>
+                            <constraint firstItem="SB3-66-IUp" firstAttribute="top" secondItem="FZM-nb-EpY" secondAttribute="top" id="gAX-g3-VDw"/>
                             <constraint firstItem="J1g-jV-vDg" firstAttribute="leading" secondItem="FZM-nb-EpY" secondAttribute="leading" constant="40" id="wJf-Ck-XfN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SpH-TX-KkH"/>
+                    <connections>
+                        <outlet property="scrollViewImageView" destination="SB3-66-IUp" id="kuP-he-mDk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruU-PQ-t9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

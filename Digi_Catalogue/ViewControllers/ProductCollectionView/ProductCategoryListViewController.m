@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
+    self.navigationController.navigationBarHidden = NO;
     if (!expandedSections) {
         expandedSections = [[NSMutableIndexSet alloc] init];
     }
