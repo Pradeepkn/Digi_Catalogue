@@ -502,7 +502,7 @@ A new look and feel for our brand was never an easy decision, but it was importa
             </objects>
             <point key="canvasLocation" x="1620" y="221"/>
         </scene>
-        <!--Item-->
+        <!--Setting View Controller-->
         <scene sceneID="jbH-5E-GfT">
             <objects>
                 <viewController storyboardIdentifier="SettingViewController" id="0vY-Y8-i2a" customClass="SettingViewController" sceneMemberID="viewController">
@@ -514,16 +514,23 @@ A new look and feel for our brand was never an easy decision, but it was importa
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Z7-zw-6k3" customClass="iCarousel">
-                                <rect key="frame" x="20" y="118" width="600" height="237"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Z7-zw-6k3" customClass="iCarousel">
+                                <rect key="frame" x="20" y="118" width="560" height="237"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="237" id="8XD-n9-G1G"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="0vY-Y8-i2a" id="Gtw-W3-hJT"/>
                                     <outlet property="delegate" destination="0vY-Y8-i2a" id="F7g-YZ-Olw"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collection Lable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xU2-Dj-SJY">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Lable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xU2-Dj-SJY">
                                 <rect key="frame" x="241" y="341" width="124" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Qky-xt-m2x"/>
+                                    <constraint firstAttribute="width" constant="124" id="WET-IS-tiw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <color key="textColor" red="0.99776785710000004" green="0.92507415979999996" blue="0.87356319380000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -700,16 +707,30 @@ A new look and feel for our brand was never an easy decision, but it was importa
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Our Collections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqe-Lc-Efr">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Collections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqe-Lc-Efr">
                                 <rect key="frame" x="241" y="89" width="119" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fb6-v5-1OA"/>
+                                    <constraint firstAttribute="width" constant="119" id="kOi-72-GGB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <color key="textColor" red="0.99776785710000004" green="0.92507415979999996" blue="0.87356319380000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xU2-Dj-SJY" firstAttribute="top" secondItem="0Z7-zw-6k3" secondAttribute="bottom" constant="-14" id="5P9-iA-Ugd"/>
+                            <constraint firstAttribute="trailing" secondItem="0Z7-zw-6k3" secondAttribute="trailing" constant="20" id="6yK-na-yYh"/>
+                            <constraint firstItem="xU2-Dj-SJY" firstAttribute="centerX" secondItem="0Z7-zw-6k3" secondAttribute="centerX" constant="3" id="LvC-y7-3FC"/>
+                            <constraint firstItem="lqe-Lc-Efr" firstAttribute="top" secondItem="X0Z-Nq-Kcz" secondAttribute="bottom" constant="25" id="SdT-0T-zdz"/>
+                            <constraint firstAttribute="centerX" secondItem="0Z7-zw-6k3" secondAttribute="centerX" id="U2W-jo-Pkp"/>
+                            <constraint firstItem="0Z7-zw-6k3" firstAttribute="leading" secondItem="kCw-8x-EDA" secondAttribute="leading" constant="20" id="efe-nH-vJZ"/>
+                            <constraint firstAttribute="centerX" secondItem="lqe-Lc-Efr" secondAttribute="centerX" constant="-0.5" id="pF8-67-d5d"/>
+                            <constraint firstItem="xU2-Dj-SJY" firstAttribute="top" secondItem="X0Z-Nq-Kcz" secondAttribute="bottom" constant="277" id="uqV-K1-Yka"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="czM-sS-KaE"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="czM-sS-KaE"/>
                     <navigationItem key="navigationItem" id="kCT-VF-9cf">
                         <barButtonItem key="rightBarButtonItem" title="LogOut" style="done" id="FMZ-1c-NOW">
                             <color key="tintColor" red="0.05506054061" green="0.2806992412" blue="0.65512547350000006" alpha="1" colorSpace="calibratedRGB"/>

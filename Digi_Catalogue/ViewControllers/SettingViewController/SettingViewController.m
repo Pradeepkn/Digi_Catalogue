@@ -102,7 +102,7 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        FXImageView *imageView = [[FXImageView alloc] initWithFrame:CGRectMake(self.iCarouselView.frame.origin.x, self.iCarouselView.frame.origin.y, self.iCarouselView.frame.size.width, self.iCarouselView.frame.size.height - 70)];
+        FXImageView *imageView = [[FXImageView alloc] initWithFrame:CGRectMake(self.iCarouselView.frame.origin.x, self.view.frame.size.height/2, self.view.frame.size.width*1.5, self.view.frame.size.height/2.5)];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.asynchronous = YES;
         imageView.reflectionScale = 0.5f;
