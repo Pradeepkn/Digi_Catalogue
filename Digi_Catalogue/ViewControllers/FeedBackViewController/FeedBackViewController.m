@@ -10,6 +10,7 @@
 
 @interface FeedBackViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @end
 
 @implementation FeedBackViewController
@@ -22,6 +23,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)logoutButtonAction:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*

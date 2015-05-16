@@ -182,7 +182,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductItem" rowHeight="80" id="rIj-Eq-ZZF" customClass="ProductItemCell">
@@ -251,7 +251,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XLp-CM-aVy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.7511285004878453" green="0.66954686492835047" blue="0.27025752619624516" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.7180609107" green="0.64249617049999996" blue="0.2722652122" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="26"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
