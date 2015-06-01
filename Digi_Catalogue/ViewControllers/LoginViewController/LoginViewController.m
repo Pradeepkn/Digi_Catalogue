@@ -14,6 +14,23 @@
 }
 @property(weak, nonatomic) IBOutlet UIImageView *scrollViewImageView;
 
+//****** Sign Up View ******//
+@property (weak, nonatomic) IBOutlet UIView *signUpContainerView;
+@property (weak, nonatomic) IBOutlet UITextField *signUpNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *SignUpMobileTextField;
+@property (weak, nonatomic) IBOutlet UITextField *signUpEmailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *signUpPasswordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *signUpConfirmTextField;
+//****** Forgot password API ******//
+@property (weak, nonatomic) IBOutlet UIView *forgotPasswordContainerView;
+@property (weak, nonatomic) IBOutlet UIView *forGotPasswordMainContainerView;
+@property (weak, nonatomic) IBOutlet UITextField *forgotPasswordEmailTextField;
+
+//****** Sign In View ******//
+@property (weak, nonatomic) IBOutlet UIView *signInContainerView;
+@property (weak, nonatomic) IBOutlet UITextField *signInUserNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *signInPasswordTextField;
+
 @end
 
 @implementation LoginViewController
@@ -24,6 +41,36 @@
     self.navigationController.navigationBarHidden = YES;
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(animateBackgroundImages) userInfo:nil repeats:YES];
     // Do any additional setup after loading the view.
+}
+
+- (IBAction)signUpButtonClicked:(id)sender {
+
+}
+
+- (IBAction)faceBookButtonClicked:(id)sender {
+    self.signInContainerView.hidden = YES;
+    self.signUpContainerView.hidden = YES;
+    self.forGotPasswordMainContainerView.hidden = NO;
+}
+
+- (IBAction)signUpToLoginButtonClicked:(id)sender {
+    self.signInContainerView.hidden = FALSE;
+    self.signUpContainerView.hidden = YES;
+}
+
+- (IBAction)signInButtonClicked:(id)sender {
+
+}
+
+- (IBAction)signInSignUpButtonClicked:(id)sender {
+    self.signInContainerView.hidden = YES;
+    self.signUpContainerView.hidden = NO;
+}
+
+- (IBAction)forgotPasswordResetButtonClicked:(id)sender {
+    self.signInContainerView.hidden = NO;
+    self.signUpContainerView.hidden = YES;
+    self.forGotPasswordMainContainerView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
