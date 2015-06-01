@@ -1,6 +1,5 @@
 PODS:
   - AFNetworking (1.3.4)
-  - GWCollapsibleTable (0.1.0)
   - iCarousel (1.7.6)
   - IQKeyboardManager (3.2.2)
   - jastor (0.2.1)
@@ -11,18 +10,15 @@ PODS:
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
-  - UPStackMenu (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 1.3.0)
-  - GWCollapsibleTable (~> 0.1.0)
   - iCarousel (~> 1.7.6)
   - IQKeyboardManager
   - jastor (~> 0.2.1)
   - MagicalRecord (from `https://github.com/magicalpanda/MagicalRecord.git`, tag `v2.3.0-beta.5`)
   - MBProgressHUD (~> 0.8)
   - SDWebImage (~> 3.6)
-  - UPStackMenu
 
 EXTERNAL SOURCES:
   MagicalRecord:
@@ -36,13 +32,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
-  GWCollapsibleTable: 80dfcc2764944ffa92a1126e1c970a878b9f599a
   iCarousel: ddd7f142c7c2f3429b0ce5fb8ea37f4a059394cd
   IQKeyboardManager: 99df8006864663a4126a77b9a2f7ea70077eff31
   jastor: fe9ff71f4b683698253d6a0d9a2561987fd9aff3
   MagicalRecord: 5b7e807bc07c5d642af1f7d894b7fe0d3c317ca2
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
-  UPStackMenu: 4e834206f76451c1d78a6cacee46e47ecf83b174
 
 COCOAPODS: 0.36.3

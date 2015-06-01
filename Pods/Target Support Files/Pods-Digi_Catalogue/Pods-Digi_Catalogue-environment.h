@@ -12,12 +12,6 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 4
 
-// GWCollapsibleTable
-#define COCOAPODS_POD_AVAILABLE_GWCollapsibleTable
-#define COCOAPODS_VERSION_MAJOR_GWCollapsibleTable 0
-#define COCOAPODS_VERSION_MINOR_GWCollapsibleTable 1
-#define COCOAPODS_VERSION_PATCH_GWCollapsibleTable 0
-
 // IQKeyboardManager
 #define COCOAPODS_POD_AVAILABLE_IQKeyboardManager
 #define COCOAPODS_VERSION_MAJOR_IQKeyboardManager 3
@@ -53,12 +47,6 @@
 #define COCOAPODS_VERSION_MAJOR_SDWebImage_Core 3
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 7
 #define COCOAPODS_VERSION_PATCH_SDWebImage_Core 2
-
-// UPStackMenu
-#define COCOAPODS_POD_AVAILABLE_UPStackMenu
-#define COCOAPODS_VERSION_MAJOR_UPStackMenu 1
-#define COCOAPODS_VERSION_MINOR_UPStackMenu 0
-#define COCOAPODS_VERSION_PATCH_UPStackMenu 0
 
 // iCarousel
 #define COCOAPODS_POD_AVAILABLE_iCarousel
