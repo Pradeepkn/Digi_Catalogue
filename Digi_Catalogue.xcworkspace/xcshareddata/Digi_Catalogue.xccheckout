@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6FDD64D0-5FD2-47EE-A4A4-34AFCDD43157</string>
+	<string>33FD4BA2-D748-4B74-A9B5-C937E3E1F183</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Digi_Catalogue</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>098A48758C3A9AF444D31F91C09421E0661681C2</key>
-		<string>https://github.com/Pradeepkn/Digi_Catalogue.git</string>
+		<string>https://github.com/Pradeepkn/Digi_Catalogue</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Digi_Catalogue.xcworkspace</string>
@@ -21,7 +21,7 @@
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Pradeepkn/Digi_Catalogue.git</string>
+	<string>https://github.com/Pradeepkn/Digi_Catalogue</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
