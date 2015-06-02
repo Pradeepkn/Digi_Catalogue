@@ -11,6 +11,7 @@
 @interface FeedBackViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property (weak, nonatomic) IBOutlet UIImageView *selectedFeedBackImage;
 @end
 
 @implementation FeedBackViewController
@@ -27,6 +28,31 @@
 
 - (IBAction)logoutButtonAction:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)feedBackRatingButtonClicked:(UIButton *)sender {
+    [self.selectedFeedBackImage setImage:sender.imageView.image];
+    switch (sender.tag) {
+        case 1:
+            ;
+            break;
+        case 2:
+            ;
+            break;
+        case 3:
+            ;
+            break;
+        case 4:
+            ;
+            break;
+        case 5:
+            ;
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 /*

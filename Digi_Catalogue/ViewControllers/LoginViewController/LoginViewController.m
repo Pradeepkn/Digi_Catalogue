@@ -40,7 +40,27 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mod.png"]];
     self.navigationController.navigationBarHidden = YES;
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(animateBackgroundImages) userInfo:nil repeats:YES];
-    // Do any additional setup after loading the view.
+    [self setUpViewElements];
+}
+
+- (void)setUpViewElements {
+    self.signInContainerView.layer.shadowOffset = CGSizeMake(5, 5);
+    self.signInContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.signInContainerView.layer.masksToBounds = NO;
+    self.signInContainerView.layer.shadowOpacity = 0.80f;
+    self.signInContainerView.layer.shadowRadius = 1.0f;
+
+    self.signUpContainerView.layer.shadowOffset = CGSizeMake(5, 5);
+    self.signUpContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.signUpContainerView.layer.masksToBounds = NO;
+    self.signUpContainerView.layer.shadowOpacity = 0.80f;
+    self.signUpContainerView.layer.shadowRadius = 1.0f;
+    
+    self.forgotPasswordContainerView.layer.shadowOffset = CGSizeMake(5, 5);
+    self.forgotPasswordContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.forgotPasswordContainerView.layer.masksToBounds = NO;
+    self.forgotPasswordContainerView.layer.shadowOpacity = 0.80f;
+    self.forgotPasswordContainerView.layer.shadowRadius = 1.0f;
 }
 
 - (IBAction)signUpButtonClicked:(id)sender {
