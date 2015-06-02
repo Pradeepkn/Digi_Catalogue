@@ -12,6 +12,9 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Constant.h"
 #import "DataManager.h"
+#import "ProductDetailViewController.h"
+
+static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 
 @interface ProductCollectionView () {
   NSMutableArray *_galleryItems;
@@ -26,16 +29,16 @@
 @implementation ProductCollectionView
 
 - (void)viewDidLoad {
-  [super viewDidLoad];
-  homeType = [[DataManager sharedInstance] getCollectionViewType];
+    [super viewDidLoad];
+    homeType = [[DataManager sharedInstance] getCollectionViewType];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-  return 1;
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-  return 4; //[self.productDetails count];
+    return 4; //[self.productDetails count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,12 +74,19 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
   //  selectedIndex = indexPath.row;
-  //  [self performSegueWithIdentifier:kItemDetailSeague sender:nil];
+    [self navigateToProductDetailsViewController];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
   CGFloat picDimension = self.view.frame.size.width;
   return CGSizeMake(picDimension / 3.5, picDimension / 2.5);
+}
+
+
+- (void)navigateToProductDetailsViewController {
+    UIStoryboard *productDetailStoryBoard = [UIStoryboard storyboardWithName:kEKProductDetailsStoryboard bundle:nil];
+    ProductDetailViewController *productDetailsViewController = (ProductDetailViewController*)[productDetailStoryBoard instantiateInitialViewController];
+    [self.navigationController pushViewController:productDetailsViewController animated:YES];
 }
 
 //- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
@@ -98,6 +108,7 @@
 
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
 }
+
 - (void)doneSearching_Clicked {
 }
 

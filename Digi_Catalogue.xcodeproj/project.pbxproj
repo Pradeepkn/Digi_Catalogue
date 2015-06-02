@@ -47,6 +47,8 @@
 		279D96321ADD4CEF00124B4C /* SplitViewStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279D96311ADD4CEF00124B4C /* SplitViewStoryBoard.storyboard */; };
 		279D96351ADD524000124B4C /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279D96341ADD524000124B4C /* TabBarController.m */; };
 		279D96391ADD53E900124B4C /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279D96381ADD53E900124B4C /* SplitViewController.m */; };
+		27A3DCAC1B1DE56D007807F9 /* ProductDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A3DCAB1B1DE56D007807F9 /* ProductDetailStoryboard.storyboard */; };
+		27A3DCAF1B1DE692007807F9 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A3DCAE1B1DE692007807F9 /* ProductDetailViewController.m */; };
 		27E5235F1AF0078700D33D67 /* MZLoadingCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E523541AF0078700D33D67 /* MZLoadingCircle.m */; };
 		27E523601AF0078700D33D67 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E523561AF0078700D33D67 /* FXImageView.m */; };
 		27E523611AF0078700D33D67 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E523581AF0078700D33D67 /* UIImage+FX.m */; };
@@ -131,6 +133,9 @@
 		279D96341ADD524000124B4C /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarController.m; path = TabBarController/TabBarController.m; sourceTree = "<group>"; };
 		279D96371ADD53E900124B4C /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
 		279D96381ADD53E900124B4C /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
+		27A3DCAB1B1DE56D007807F9 /* ProductDetailStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductDetailStoryboard.storyboard; sourceTree = "<group>"; };
+		27A3DCAD1B1DE692007807F9 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		27A3DCAE1B1DE692007807F9 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		27E523531AF0078700D33D67 /* MZLoadingCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZLoadingCircle.h; sourceTree = "<group>"; };
 		27E523541AF0078700D33D67 /* MZLoadingCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZLoadingCircle.m; sourceTree = "<group>"; };
 		27E523551AF0078700D33D67 /* FXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXImageView.h; sourceTree = "<group>"; };
@@ -238,6 +243,7 @@
 				273558231ADB15790059FBE7 /* Main.storyboard */,
 				273558281ADB15790059FBE7 /* LaunchScreen.xib */,
 				279D96311ADD4CEF00124B4C /* SplitViewStoryBoard.storyboard */,
+				27A3DCAB1B1DE56D007807F9 /* ProductDetailStoryboard.storyboard */,
 			);
 			name = StoryBoard;
 			sourceTree = "<group>";
@@ -323,6 +329,8 @@
 				271982AF1ADC6C1E00C0FB3C /* ProductListTableViewCell.m */,
 				279D96371ADD53E900124B4C /* SplitViewController.h */,
 				279D96381ADD53E900124B4C /* SplitViewController.m */,
+				27A3DCAD1B1DE692007807F9 /* ProductDetailViewController.h */,
+				27A3DCAE1B1DE692007807F9 /* ProductDetailViewController.m */,
 			);
 			path = ProductCollectionView;
 			sourceTree = "<group>";
@@ -531,6 +539,7 @@
 				271982751ADC45C800C0FB3C /* banner6@2x.png in Resources */,
 				2719827C1ADC4F9B00C0FB3C /* mod@2x.png in Resources */,
 				2719826A1ADC45C800C0FB3C /* banner1.png in Resources */,
+				27A3DCAC1B1DE56D007807F9 /* ProductDetailStoryboard.storyboard in Resources */,
 				2719826D1ADC45C800C0FB3C /* banner2@2x.png in Resources */,
 				2719826F1ADC45C800C0FB3C /* banner3@2x.png in Resources */,
 				2735582A1ADB15790059FBE7 /* LaunchScreen.xib in Resources */,
@@ -605,6 +614,7 @@
 				279D96391ADD53E900124B4C /* SplitViewController.m in Sources */,
 				271982B61ADC6C1E00C0FB3C /* DiamondSplitViewController.m in Sources */,
 				271982BB1ADC6C1E00C0FB3C /* GalleryItemCollectionViewCell.m in Sources */,
+				27A3DCAF1B1DE692007807F9 /* ProductDetailViewController.m in Sources */,
 				2735581F1ADB15790059FBE7 /* Digi_Catalogue.xcdatamodeld in Sources */,
 				271982571ADC3CF200C0FB3C /* AppDelegate.m in Sources */,
 				27E523621AF0078700D33D67 /* Flickr.m in Sources */,
