@@ -7,8 +7,13 @@
 //
 
 #import "ProductDetailViewController.h"
+#import "DataManager.h"
 
 @interface ProductDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *productScrollView;
+@property (weak, nonatomic) IBOutlet UIView *productDetailContainerView;
+@property (weak, nonatomic) IBOutlet UILabel *productDetailLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *productImageView;
 
 @end
 
@@ -16,9 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [DataManager applyShadowEffectForView:self.productDetailContainerView];
+    self.productDetailContainerView.hidden = YES;
+    [DataManager applyShadowEffectForView:self.productImageView];
 }
-
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -30,9 +36,16 @@
     self.navigationController.navigationBarHidden = YES;
 }
 
+- (IBAction)discloseProductDetailsButtonClicked:(id)sender {
+    self.productDetailContainerView.hidden = NO;
+}
+
+- (IBAction)hideProductDetailContainerView:(id)sender {
+    self.productDetailContainerView.hidden = YES;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "MZLoadingCircle.h"
+#import "DataManager.h"
 
 @interface LoginViewController (){
     MZLoadingCircle *loadingCircle;
@@ -44,23 +45,9 @@
 }
 
 - (void)setUpViewElements {
-    self.signInContainerView.layer.shadowOffset = CGSizeMake(5, 5);
-    self.signInContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.signInContainerView.layer.masksToBounds = NO;
-    self.signInContainerView.layer.shadowOpacity = 0.80f;
-    self.signInContainerView.layer.shadowRadius = 1.0f;
-
-    self.signUpContainerView.layer.shadowOffset = CGSizeMake(5, 5);
-    self.signUpContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.signUpContainerView.layer.masksToBounds = NO;
-    self.signUpContainerView.layer.shadowOpacity = 0.80f;
-    self.signUpContainerView.layer.shadowRadius = 1.0f;
-    
-    self.forgotPasswordContainerView.layer.shadowOffset = CGSizeMake(5, 5);
-    self.forgotPasswordContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.forgotPasswordContainerView.layer.masksToBounds = NO;
-    self.forgotPasswordContainerView.layer.shadowOpacity = 0.80f;
-    self.forgotPasswordContainerView.layer.shadowRadius = 1.0f;
+    [DataManager applyShadowEffectForView:self.signInContainerView];
+    [DataManager applyShadowEffectForView:self.signUpContainerView];
+    [DataManager applyShadowEffectForView:self.forgotPasswordContainerView];
 }
 
 - (IBAction)signUpButtonClicked:(id)sender {

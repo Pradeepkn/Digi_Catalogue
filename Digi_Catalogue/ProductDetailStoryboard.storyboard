@@ -32,32 +32,70 @@
                                 <state key="normal" image="star3">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="discloseProductDetailsButtonClicked:" destination="AZ8-Tc-RG1" eventType="touchUpInside" id="aJZ-rC-Ulk"/>
+                                </connections>
                             </button>
                             <view alpha="0.79999999999999982" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="en6-bd-3AE">
-                                <rect key="frame" x="16" y="150" width="568" height="300"/>
+                                <rect key="frame" x="50" y="80" width="500" height="370"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWG-sr-kdR">
+                                        <rect key="frame" x="8" y="8" width="484" height="354"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvl-ra-Xie">
+                                        <rect key="frame" x="467" y="8" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="7eR-Ih-lGl"/>
+                                            <constraint firstAttribute="width" constant="25" id="ZC8-GD-8Ef"/>
+                                        </constraints>
+                                        <state key="normal" image="close">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="hideProductDetailContainerView:" destination="AZ8-Tc-RG1" eventType="touchUpInside" id="Vrj-Bg-ayk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.86349826389999995" green="0.85000694519999997" blue="0.76628068940000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NWG-sr-kdR" secondAttribute="trailing" constant="8" id="0Jy-U0-C8u"/>
+                                    <constraint firstAttribute="trailing" secondItem="nvl-ra-Xie" secondAttribute="trailing" constant="8" id="bug-UQ-Tyw"/>
+                                    <constraint firstItem="NWG-sr-kdR" firstAttribute="leading" secondItem="en6-bd-3AE" secondAttribute="leading" constant="8" id="dGl-j3-RRo"/>
+                                    <constraint firstAttribute="bottom" secondItem="NWG-sr-kdR" secondAttribute="bottom" constant="8" id="hrS-EG-oG5"/>
+                                    <constraint firstItem="nvl-ra-Xie" firstAttribute="top" secondItem="en6-bd-3AE" secondAttribute="top" constant="8" id="qXM-U1-lFh"/>
+                                    <constraint firstItem="NWG-sr-kdR" firstAttribute="top" secondItem="en6-bd-3AE" secondAttribute="top" constant="8" id="qpL-sM-LvB"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="g90-DV-VRf" secondAttribute="centerX" id="0Aa-QY-tTC"/>
-                            <constraint firstItem="en6-bd-3AE" firstAttribute="leading" secondItem="Srz-xC-rv8" secondAttribute="leading" constant="16" id="2Qz-Md-Tjk"/>
+                            <constraint firstItem="en6-bd-3AE" firstAttribute="leading" secondItem="Srz-xC-rv8" secondAttribute="leading" constant="50" id="2Qz-Md-Tjk"/>
                             <constraint firstAttribute="centerX" secondItem="wtP-qE-UrV" secondAttribute="centerX" id="6YS-sV-GYW"/>
                             <constraint firstItem="g90-DV-VRf" firstAttribute="leading" secondItem="Srz-xC-rv8" secondAttribute="leading" constant="40" id="Mlw-Ng-XKt"/>
                             <constraint firstItem="nsT-tG-Xl6" firstAttribute="top" secondItem="wtP-qE-UrV" secondAttribute="bottom" constant="10" id="WAU-pZ-OpQ"/>
                             <constraint firstAttribute="trailing" secondItem="myg-Tl-8ZM" secondAttribute="trailing" id="X6Z-z7-8vT"/>
                             <constraint firstItem="myg-Tl-8ZM" firstAttribute="top" secondItem="Srz-xC-rv8" secondAttribute="top" id="Zaw-xm-QE2"/>
                             <constraint firstAttribute="centerY" secondItem="g90-DV-VRf" secondAttribute="centerY" constant="0.5" id="b8f-PW-Is4"/>
-                            <constraint firstAttribute="trailing" secondItem="en6-bd-3AE" secondAttribute="trailing" constant="16" id="dwQ-zF-0mK"/>
+                            <constraint firstAttribute="trailing" secondItem="en6-bd-3AE" secondAttribute="trailing" constant="50" id="dwQ-zF-0mK"/>
                             <constraint firstItem="nsT-tG-Xl6" firstAttribute="top" secondItem="myg-Tl-8ZM" secondAttribute="bottom" id="fLr-aA-IfL"/>
                             <constraint firstAttribute="trailing" secondItem="g90-DV-VRf" secondAttribute="trailing" constant="40" id="qqo-1r-nH9"/>
                             <constraint firstItem="g90-DV-VRf" firstAttribute="top" secondItem="tH9-HN-63k" secondAttribute="bottom" constant="44" id="sXH-MX-zOf"/>
                             <constraint firstItem="nsT-tG-Xl6" firstAttribute="top" secondItem="g90-DV-VRf" secondAttribute="bottom" constant="65" id="sh3-Lf-AtX"/>
                             <constraint firstItem="myg-Tl-8ZM" firstAttribute="leading" secondItem="Srz-xC-rv8" secondAttribute="leading" id="v9Q-xU-KYB"/>
                             <constraint firstItem="wtP-qE-UrV" firstAttribute="top" secondItem="en6-bd-3AE" secondAttribute="bottom" constant="40" id="y7V-uP-3Nr"/>
-                            <constraint firstItem="en6-bd-3AE" firstAttribute="top" secondItem="tH9-HN-63k" secondAttribute="bottom" constant="130" id="zXU-Qz-IyS"/>
+                            <constraint firstItem="en6-bd-3AE" firstAttribute="top" secondItem="tH9-HN-63k" secondAttribute="bottom" constant="60" id="zXU-Qz-IyS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="productDetailContainerView" destination="en6-bd-3AE" id="6MG-4Z-Da1"/>
+                        <outlet property="productDetailLabel" destination="NWG-sr-kdR" id="px4-h1-dYI"/>
+                        <outlet property="productImageView" destination="g90-DV-VRf" id="ywy-Gs-bL0"/>
+                        <outlet property="productScrollView" destination="myg-Tl-8ZM" id="A5N-vy-cR6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxW-3H-2mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,6 +103,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="25" height="25"/>
         <image name="mod.png" width="1024" height="768"/>
         <image name="star3" width="100" height="100"/>
     </resources>

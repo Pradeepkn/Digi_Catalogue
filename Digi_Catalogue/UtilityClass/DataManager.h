@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Constant.h"
 
 @interface DataManager : NSObject
@@ -22,5 +23,7 @@
 - (void)setHomeViewType:(HomeViewType)viewType;
 
 - (HomeViewType)getCollectionViewType;
+
++ (void)applyShadowEffectForView:(UIView *)modifyingView;
 
 @end

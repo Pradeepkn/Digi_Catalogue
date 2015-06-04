@@ -70,4 +70,13 @@
     return homeViewType;
 }
 
++ (void)applyShadowEffectForView:(UIView *)modifyingView {
+    modifyingView.layer.shadowOffset = CGSizeMake(-2, 2);
+    modifyingView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    modifyingView.layer.masksToBounds = NO;
+    modifyingView.layer.shadowOpacity = 0.6f;
+    modifyingView.layer.shadowRadius = 1.0f;
+    modifyingView.layer.borderWidth = 1.0f;
+}
+
 @end
