@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AZ8-Tc-RG1">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
@@ -22,19 +23,39 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mod.png" translatesAutoresizingMaskIntoConstraints="NO" id="g90-DV-VRf">
                                 <rect key="frame" x="40" y="64" width="520" height="471"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtP-qE-UrV">
+                                <rect key="frame" x="250" y="490" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="QoG-vP-Qaz"/>
+                                    <constraint firstAttribute="height" constant="100" id="rbs-rg-fIL"/>
+                                </constraints>
+                                <state key="normal" image="star3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view alpha="0.79999999999999982" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="en6-bd-3AE">
+                                <rect key="frame" x="16" y="150" width="568" height="300"/>
+                                <color key="backgroundColor" red="0.86349826389999995" green="0.85000694519999997" blue="0.76628068940000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="g90-DV-VRf" secondAttribute="centerX" id="0Aa-QY-tTC"/>
+                            <constraint firstItem="en6-bd-3AE" firstAttribute="leading" secondItem="Srz-xC-rv8" secondAttribute="leading" constant="16" id="2Qz-Md-Tjk"/>
+                            <constraint firstAttribute="centerX" secondItem="wtP-qE-UrV" secondAttribute="centerX" id="6YS-sV-GYW"/>
                             <constraint firstItem="g90-DV-VRf" firstAttribute="leading" secondItem="Srz-xC-rv8" secondAttribute="leading" constant="40" id="Mlw-Ng-XKt"/>
+                            <constraint firstItem="nsT-tG-Xl6" firstAttribute="top" secondItem="wtP-qE-UrV" secondAttribute="bottom" constant="10" id="WAU-pZ-OpQ"/>
                             <constraint firstAttribute="trailing" secondItem="myg-Tl-8ZM" secondAttribute="trailing" id="X6Z-z7-8vT"/>
                             <constraint firstItem="myg-Tl-8ZM" firstAttribute="top" secondItem="Srz-xC-rv8" secondAttribute="top" id="Zaw-xm-QE2"/>
                             <constraint firstAttribute="centerY" secondItem="g90-DV-VRf" secondAttribute="centerY" constant="0.5" id="b8f-PW-Is4"/>
+                            <constraint firstAttribute="trailing" secondItem="en6-bd-3AE" secondAttribute="trailing" constant="16" id="dwQ-zF-0mK"/>
                             <constraint firstItem="nsT-tG-Xl6" firstAttribute="top" secondItem="myg-Tl-8ZM" secondAttribute="bottom" id="fLr-aA-IfL"/>
                             <constraint firstAttribute="trailing" secondItem="g90-DV-VRf" secondAttribute="trailing" constant="40" id="qqo-1r-nH9"/>
                             <constraint firstItem="g90-DV-VRf" firstAttribute="top" secondItem="tH9-HN-63k" secondAttribute="bottom" constant="44" id="sXH-MX-zOf"/>
                             <constraint firstItem="nsT-tG-Xl6" firstAttribute="top" secondItem="g90-DV-VRf" secondAttribute="bottom" constant="65" id="sh3-Lf-AtX"/>
                             <constraint firstItem="myg-Tl-8ZM" firstAttribute="leading" secondItem="Srz-xC-rv8" secondAttribute="leading" id="v9Q-xU-KYB"/>
+                            <constraint firstItem="wtP-qE-UrV" firstAttribute="top" secondItem="en6-bd-3AE" secondAttribute="bottom" constant="40" id="y7V-uP-3Nr"/>
+                            <constraint firstItem="en6-bd-3AE" firstAttribute="top" secondItem="tH9-HN-63k" secondAttribute="bottom" constant="130" id="zXU-Qz-IyS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,5 +66,6 @@
     </scenes>
     <resources>
         <image name="mod.png" width="1024" height="768"/>
+        <image name="star3" width="100" height="100"/>
     </resources>
 </document>
