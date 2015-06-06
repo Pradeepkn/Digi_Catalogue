@@ -7,6 +7,7 @@
 //
 
 #import "HelperMethods.h"
+#import <UIKit/UIKit.h>
 
 @implementation HelperMethods
 

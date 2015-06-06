@@ -14,6 +14,7 @@
 #import "Products.h"
 #import "Items.h"
 #import "ListOfItems.h"
+#import "DataUtility.h"
 
 @implementation LoadingLogic
 
@@ -106,8 +107,8 @@ static NSString *const kPlatinum = @"Platinum";
 - (void)storeImagesFromUrl:(NSString *)url
 {
     UIImageView *temp = [[UIImageView alloc] init];
-    [temp sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:url] andPlaceholderImage:[UIImage imageNamed:@"loading.png"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-    }];
+//    [temp sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:url] andPlaceholderImage:[UIImage imageNamed:@"loading.png"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//    }];
 }
 @end

@@ -34,14 +34,14 @@ static DataStorage *sharedInstance = nil;
     NSString *objectClass = NSStringFromClass([apiObject class]);
     NSString *objectKey = [ NSString stringWithFormat:@"tx%@", [[postDetails.apiName capitalizedString] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
     
-    Cache *dataCache = [Cache MR_findFirstByAttribute:@"key" withValue:objectKey];
-    if (dataCache != nil) {
-        Class theClass = NSClassFromString(objectClass);
-        cachedObject = [[theClass alloc] init];
-        cachedObject = dataCache.value;
-        [cachedObject apiCallDone:YES customizeResponseOrDoSomeJob:apiObject];
-    }
-    
+//    Cache *dataCache = [Cache MR_findFirstByAttribute:@"key" withValue:objectKey];
+//    if (dataCache != nil) {
+//        Class theClass = NSClassFromString(objectClass);
+//        cachedObject = [[theClass alloc] init];
+//        cachedObject = dataCache.value;
+//        [cachedObject apiCallDone:YES customizeResponseOrDoSomeJob:apiObject];
+//    }
+//    
     return cachedObject;
 }
 
@@ -59,20 +59,20 @@ static DataStorage *sharedInstance = nil;
         
         NSString *objectKey = [NSString stringWithFormat:@"tx%@", [[postDetails.apiName capitalizedString] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
         
-        NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:[NSManagedObjectContext MR_defaultContext]];
-        Cache *dataCache = [Cache MR_findFirstByAttribute:@"key" withValue:objectKey];
-        if (dataCache == nil) {
-            dataCache = [Cache MR_createInContext:localContext];
-        }
-        
-        postDetails.cacheTimeStamp = [NSDate date];
-        
-        dataCache.key = objectKey;
-        dataCache.value = postDetails;
-        dataCache.timeStamp = [NSDate date];
-        [localContext MR_saveToPersistentStoreAndWait];
-        
-        success = YES;
+//        NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:[NSManagedObjectContext MR_defaultContext]];
+//        Cache *dataCache = [Cache MR_findFirstByAttribute:@"key" withValue:objectKey];
+//        if (dataCache == nil) {
+//            dataCache = [Cache MR_createInContext:localContext];
+//        }
+//        
+//        postDetails.cacheTimeStamp = [NSDate date];
+//        
+//        dataCache.key = objectKey;
+//        dataCache.value = postDetails;
+//        dataCache.timeStamp = [NSDate date];
+//        [localContext MR_saveToPersistentStoreAndWait];
+//        
+//        success = YES;
     }
     
     return success;
@@ -89,18 +89,18 @@ static DataStorage *sharedInstance = nil;
         
         NSString *objectKey = [NSString stringWithFormat:@"tx%@", [[postDetails.apiName capitalizedString] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
         
-        NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:[NSManagedObjectContext MR_defaultContext]];
-        
-        NSArray *allData = [Cache MR_findByAttribute:@"key" withValue:objectKey inContext:localContext];
-        
-        if (nil != allData) {
-            for (Cache *data in allData) {
-                sucess = YES;
-                [data MR_deleteInContext:localContext];
-            }
-        }
-        
-        [localContext MR_saveToPersistentStoreWithCompletion:nil];
+//        NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:[NSManagedObjectContext MR_defaultContext]];
+//        
+//        NSArray *allData = [Cache MR_findByAttribute:@"key" withValue:objectKey inContext:localContext];
+//        
+//        if (nil != allData) {
+//            for (Cache *data in allData) {
+//                sucess = YES;
+//                [data MR_deleteInContext:localContext];
+//            }
+//        }
+//        
+//        [localContext MR_saveToPersistentStoreWithCompletion:nil];
     }
     
     return sucess;

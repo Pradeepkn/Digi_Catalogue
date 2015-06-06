@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Jastor.h"
 
 @interface LoginDetails : Jastor
 

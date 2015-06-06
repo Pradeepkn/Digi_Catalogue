@@ -201,7 +201,7 @@ static WebService *webInstance;
     
     [[AFNetWorkAPIClient sharedClient] postPath:apiPath parameters:parameters  success:^(AFHTTPRequestOperation *operation, id JSON) {
         
-        DBLog(@"JSON = %@",JSON);
+        NSLog(@"JSON = %@",JSON);
         [apiBase parseJsonObjectFromResponse:JSON];
         
 //        [self parseJsonUsingJastor:JSON withApiObject:apiBase];
@@ -212,7 +212,7 @@ static WebService *webInstance;
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        DBLog(@"error = %@",error);
+        NSLog(@"error = %@",error);
         if (callback) {
             callback(apiBase, nil, error);
         }
@@ -228,7 +228,7 @@ static WebService *webInstance;
     __block NSMutableDictionary *parameters = [apiBase createJsonObjectForRequest];
     
     [[AFNetWorkAPIClient sharedClient] getPath:apiPath parameters:parameters  success:^(AFHTTPRequestOperation *operation, id JSON) {
-        DBLog(@"JSON = %@",JSON);
+        NSLog(@"JSON = %@",JSON);
         
 //        [self parseJsonUsingJastor:JSON withApiObject:apiBase];
         

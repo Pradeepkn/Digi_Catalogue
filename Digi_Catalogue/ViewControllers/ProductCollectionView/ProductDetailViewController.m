@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *productDetailContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *productDetailLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
+@property (weak, nonatomic) IBOutlet UIButton *detailButton;
 
 @end
 
@@ -36,12 +37,20 @@
     self.navigationController.navigationBarHidden = YES;
 }
 
-- (IBAction)discloseProductDetailsButtonClicked:(id)sender {
+- (IBAction)discloseProductDetailsButtonClicked:(UIButton *)sender {
+    float angle = /* DISABLES CODE */ (NO) ? 0 : (M_PI * (90) / 180.0);
+    [UIView animateWithDuration:0.3 animations:^{
+        [sender.imageView.layer setAffineTransform:CGAffineTransformRotate(CGAffineTransformIdentity, angle)];
+    }];
     self.productDetailContainerView.hidden = NO;
 }
 
 - (IBAction)hideProductDetailContainerView:(id)sender {
     self.productDetailContainerView.hidden = YES;
+    float angle = /* DISABLES CODE */ (NO) ? 0 : (M_PI * (-90) / 180.0);
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.detailButton.layer setAffineTransform:CGAffineTransformRotate(CGAffineTransformIdentity, angle)];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

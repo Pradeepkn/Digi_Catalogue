@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Jastor.h>
+#import "Jastor.h"
 
 @interface HomeScreenDetails : Jastor
 

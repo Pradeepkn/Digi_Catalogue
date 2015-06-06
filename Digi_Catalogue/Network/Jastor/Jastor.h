@@ -6,6 +6,8 @@
 //  http://devign.me | http://elad.ossadon.com | http://twitter.com/elado
 //
 
+#import <Foundation/Foundation.h>
+
 @interface Jastor : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *objectId;

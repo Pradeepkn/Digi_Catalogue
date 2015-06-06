@@ -91,6 +91,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailButton" destination="wtP-qE-UrV" id="x1z-Fk-12U"/>
                         <outlet property="productDetailContainerView" destination="en6-bd-3AE" id="6MG-4Z-Da1"/>
                         <outlet property="productDetailLabel" destination="NWG-sr-kdR" id="px4-h1-dYI"/>
                         <outlet property="productImageView" destination="g90-DV-VRf" id="ywy-Gs-bL0"/>

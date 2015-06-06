@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Pradeep. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "Jastor.h"
 
 @interface Products : Jastor

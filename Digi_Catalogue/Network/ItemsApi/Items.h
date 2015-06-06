@@ -7,6 +7,7 @@
 //
 
 #import "Jastor.h"
+#import <Foundation/Foundation.h>
 
 @interface Items : Jastor
 

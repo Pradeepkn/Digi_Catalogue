@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Constant.h"
 
 @class DataUtility;
 @class APIBase;

@@ -8,7 +8,6 @@
 
 #import "DataUtility.h"
 #import "APIBase.h"
-#import "BrinDemoAppDelegate.h"
 #import "DataStorage.h"
 #import "WebService.h"
 
