@@ -10,4 +10,10 @@
 
 @interface BaseViewController : UIViewController
 
+- (void)showLoadingMode;
+
+- (void)hideLoadingMode;
+
+- (void)showLoading;
+
 @end

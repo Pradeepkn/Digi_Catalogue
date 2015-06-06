@@ -9,6 +9,15 @@
 #import "LoginViewController.h"
 #import "MZLoadingCircle.h"
 #import "DataManager.h"
+#import "WebService.h"
+#import "APIDefines.h"
+#import "SignUpApi.h"
+#import "LoginApi.h"
+#import "ForgotPasswordApi.h"
+#import "MZLoadingCircle.h"
+#import "LoadingLogic.h"
+#import "DataUtility.h"
+
 
 @interface LoginViewController (){
     MZLoadingCircle *loadingCircle;
@@ -58,6 +67,7 @@
     self.signInContainerView.hidden = YES;
     self.signUpContainerView.hidden = YES;
     self.forGotPasswordMainContainerView.hidden = NO;
+    [self callLoginApi];
 }
 
 - (IBAction)signUpToLoginButtonClicked:(id)sender {
@@ -66,7 +76,7 @@
 }
 
 - (IBAction)signInButtonClicked:(id)sender {
-
+    [self callLoginApi];
 }
 
 - (IBAction)signInSignUpButtonClicked:(id)sender {
@@ -108,6 +118,29 @@
         [self.scrollViewImageView.layer addAnimation:transition forKey:nil];
         [self.scrollViewImageView startAnimating];
     }];
+}
+
+- (void)callLoginApi {
+    LoginApi *loginApi = [[LoginApi alloc] init];
+    loginApi.loginDetails = [[LoginDetails alloc] init];
+    loginApi.loginDetails.username = self.signInUserNameTextField.text;
+    loginApi.loginDetails.password = self.signInPasswordTextField.text;
+    loginApi.loginDetails.email = self.signInUserNameTextField.text;
+    loginApi.apiType = Post;
+    loginApi.cacheing = CACHE_PERSISTANT;
+    [self showLoading];
+    
+    [[DataUtility sharedInstance] dataForObject:loginApi response:^(APIBase *response, DataType dataType) {
+        if (loginApi.errorCode == 0) {
+            [[LoadingLogic sharedLoadingLogic] startBackGroundLoading];
+            [self performSelector:@selector(pushToHomeScreen) withObject:nil afterDelay:6];
+        }
+    }];
+}
+
+- (void)pushToHomeScreen {
+    [self performSegueWithIdentifier:@"LoginSuccessSegue" sender:nil];
+    [self hideLoadingMode];
 }
 
 @end

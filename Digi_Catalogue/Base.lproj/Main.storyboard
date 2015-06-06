@@ -260,7 +260,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="signInButtonClicked:" destination="1lZ-0T-Fzy" eventType="touchUpInside" id="BBR-pb-nEC"/>
-                                            <segue destination="wxi-pk-34O" kind="show" id="HLS-FR-nTY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-dL-RnP">
@@ -274,7 +273,6 @@
                                         </state>
                                         <connections>
                                             <action selector="faceBookButtonClicked:" destination="1lZ-0T-Fzy" eventType="touchUpInside" id="4Ak-PI-vmY"/>
-                                            <segue destination="wxi-pk-34O" kind="show" id="BQ3-4l-n5U"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbp-ZV-h5b">
@@ -398,6 +396,7 @@
                         <outlet property="signUpEmailTextField" destination="ADr-xo-EPH" id="UiM-GE-ois"/>
                         <outlet property="signUpNameTextField" destination="5is-G2-kyS" id="EVb-Up-NQl"/>
                         <outlet property="signUpPasswordTextField" destination="ewI-vC-1A5" id="nsg-AY-AkH"/>
+                        <segue destination="wxi-pk-34O" kind="show" identifier="LoginSuccessSegue" id="L5Y-aj-nX5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruU-PQ-t9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -894,7 +893,4 @@ Today's Offer/Discount price : 100/gram</string>
         <image name="star4" width="100" height="96"/>
         <image name="star5" width="100" height="84"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="HLS-FR-nTY"/>
-    </inferredMetricsTieBreakers>
 </document>

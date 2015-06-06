@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -158,7 +159,9 @@
                     </view>
                     <connections>
                         <outlet property="galleryCollectionView" destination="Tzh-f5-KIC" id="fLd-Jt-dBE"/>
+                        <outlet property="itemSearchBar" destination="Rwn-PL-toj" id="NCm-Gj-y3z"/>
                         <outlet property="searchDisplayController" destination="z9i-oV-tsX" id="Pqs-Em-ctB"/>
+                        <outlet property="segmentedFilterBar" destination="w18-Ml-Del" id="ocL-uj-4Ey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9N-M9-Mlv" userLabel="First Responder" sceneMemberID="firstResponder"/>

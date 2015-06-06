@@ -13,6 +13,11 @@
 #import "Constant.h"
 #import "DataManager.h"
 #import "ProductDetailViewController.h"
+#import "CollectionsApi.h"
+#import "DataUtility.h"
+#import "ListOfItems.h"
+#import "Products.h"
+#import "Items.h"
 
 static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 
@@ -22,6 +27,9 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 }
 
 @property(weak, nonatomic) IBOutlet UICollectionView *galleryCollectionView;
+@property(weak, nonatomic) IBOutlet UISearchBar *itemSearchBar;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedFilterBar;
+
 @property(strong, nonatomic) NSMutableArray *productDetails;
 
 @end
@@ -31,6 +39,86 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 - (void)viewDidLoad {
     [super viewDidLoad];
     homeType = [[DataManager sharedInstance] getCollectionViewType];
+    switch (homeType) {
+        case GoldViewTab:
+            self.collectionType = @"gold";
+            break;
+        case SilverViewTab:
+            self.collectionType = @"silver";
+            break;
+        case DiamondViewTab:
+            self.collectionType = @"diamond";
+            break;
+        case PlatinumViewTab:
+            self.collectionType = @"platinum";
+            break;
+            
+        default:
+            break;
+    }
+    [self callGoldCollectionApiWithType:@"price"];
+    [self initializeSearchView];
+}
+
+- (void)callGoldCollectionApiWithType:(NSString *)type {
+    CollectionsApi *collectionApi = [[CollectionsApi alloc] init];
+    collectionApi.apiType = Get;
+    collectionApi.cacheing = CACHE_MEMORY;
+    collectionApi.collectionApiName = [NSMutableString stringWithFormat:@"%@", self.collectionType];
+    [self showLoadingMode];
+    [[DataUtility sharedInstance] dataForObject:collectionApi response:^(APIBase *response, DataType dataType) {
+        if (collectionApi.errorCode == 0) {
+            if (!self.imagesArray) {
+                self.imagesArray = [[NSMutableArray alloc] init];
+            }
+            if (!self.dataSourceArray) {
+                self.dataSourceArray = [[NSMutableArray alloc] init];
+            }
+            for (ListOfItems *listOfItems in collectionApi.listOfItems) {
+                for (Products *products in listOfItems.products) {
+                    for (Items *items in products.items) {
+                        [self.imagesArray addObject:items.uri];
+                        [self.dataSourceArray addObject:items];
+                    }
+                }
+            }
+            [self hideLoadingMode];
+            [self searchResults:type];
+        }
+    }];
+}
+
+- (void)initializeSearchView {
+    self.itemSearchBar.placeholder = NSLocalizedString(@"Search", @"Search");
+    self.itemSearchBar.backgroundColor = CLEAR_COLOR;
+    [self.itemSearchBar setBackgroundImage:[[UIImage alloc] init]];
+    [self.segmentedFilterBar addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)segmentedControlChangedValue:(UISegmentedControl *)segmentControl {
+    self.selectedSearchOption = segmentControl.selectedSegmentIndex;
+    
+    switch (_selectedSearchOption) {
+        case SearchItemByPrice: {
+            [self callGoldCollectionApiWithType:@"price"];
+            break;
+        }
+        case SearchItemByPurity: {
+            [self callGoldCollectionApiWithType:@"color_name"];
+            break;
+        }
+        case SearchItemByName: {
+            [self callGoldCollectionApiWithType:@"name"];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)reloadCollectionView {
+    [self.galleryCollectionView reloadData];
+    [self.galleryCollectionView setContentOffset:CGPointZero];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -38,36 +126,14 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4; //[self.productDetails count];
+    return [self.dataSourceArray count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   GalleryItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GalleryItemCollectionViewCell" forIndexPath:indexPath];
-  //  NSString *url = @"";
-  //  [cell.galleryImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"mod.png"]];
+    Items *item = (Items *)[self.dataSourceArray objectAtIndex:indexPath.row];
+  [cell.galleryImageView sd_setImageWithURL:[NSURL URLWithString:item.uri] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
   cell.imageTitle.text = @"Purity: 22 kr";
-  UIImage *banner1 = [UIImage imageNamed:@"banner1"];
-  UIImage *banner2 = [UIImage imageNamed:@"banner2"];
-  UIImage *banner3 = [UIImage imageNamed:@"banner3"];
-  UIImage *banner4 = [UIImage imageNamed:@"banner4"];
-    switch (homeType) {
-        case GoldViewTab:
-            cell.galleryImageView.image = [banner1 imageToFitSize:cell.galleryImageView.frame.size method:MGImageResizeCrop];
-            break;
-        case SilverViewTab:
-            cell.galleryImageView.image = [banner2 imageToFitSize:cell.galleryImageView.frame.size method:MGImageResizeCrop];
-            break;
-        case DiamondViewTab:
-            cell.galleryImageView.image = [banner3 imageToFitSize:cell.galleryImageView.frame.size method:MGImageResizeCrop];
-            break;
-        case PlatinumViewTab:
-            cell.galleryImageView.image = [banner4 imageToFitSize:cell.galleryImageView.frame.size method:MGImageResizeCrop];
-            break;
-            
-        default:
-            break;
-    }
-
   cell.priceLabel.text = [NSString stringWithFormat:@"Price: र %@", @"28,000"];
   return cell;
 }
@@ -110,7 +176,20 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 }
 
 - (void)doneSearching_Clicked {
+    _searchFlags.doneClicked = YES;
+    _itemSearchBar.text = @"";
+    _searchFlags.searching = NO;
+    [self reloadCollectionView];
 }
+
+
+- (void)abortSearchingMode {
+    _searchFlags.searching = NO;
+    _itemSearchBar.text = @"";
+    [self.searchListArray removeAllObjects];
+    [self reloadCollectionView];
+}
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
@@ -126,5 +205,48 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (void)searchResults:(NSString *)searchString {
+    NSMutableArray *sortedArray = [[NSMutableArray alloc] init];
+    NSMutableDictionary *sortingDict = [[NSMutableDictionary alloc] init];
+    for (Items *items in self.dataSourceArray) {
+        switch (_selectedSearchOption) {
+            case SearchItemByPrice: {
+                [sortingDict setObject:items forKey:items.price];
+                break;
+            }
+            case SearchItemByPurity: {
+                [sortingDict setObject:items forKey:items.color_name];
+                break;
+            }
+            case SearchItemByName: {
+                [sortingDict setObject:items forKey:items.name];
+                break;
+            }
+            default:
+                break;
+        }
+        [sortedArray addObject:items];
+    }
+    
+    NSArray *keys = [sortingDict allKeys];
+    NSArray *sKeys = [keys sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    NSMutableArray *resultsArray = [[NSMutableArray alloc] init];
+    
+    for (id k in sKeys) {
+        Items *val = [sortingDict objectForKey:k];
+        [resultsArray addObject:val];
+    }
+    if ([resultsArray count]) {
+        [self.dataSourceArray removeAllObjects];
+        self.dataSourceArray = resultsArray;
+    } else {
+        [self.dataSourceArray removeAllObjects];
+    }
+    
+    [self reloadCollectionView];
+}
+
 
 @end
