@@ -106,7 +106,7 @@
                                         <segments>
                                             <segment title="Price"/>
                                             <segment title="Purity"/>
-                                            <segment title="Name"/>
+                                            <segment title="Type"/>
                                         </segments>
                                         <color key="tintColor" red="0.19619734120000001" green="0.150705178" blue="0.10147142100000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>

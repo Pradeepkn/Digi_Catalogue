@@ -65,7 +65,6 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     collectionApi.apiType = Get;
     collectionApi.cacheing = CACHE_MEMORY;
     collectionApi.collectionApiName = [NSMutableString stringWithFormat:@"%@", self.collectionType];
-    [self showLoadingMode];
     [[DataUtility sharedInstance] dataForObject:collectionApi response:^(APIBase *response, DataType dataType) {
         if (collectionApi.errorCode == 0) {
             if (!self.imagesArray) {

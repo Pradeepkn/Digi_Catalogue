@@ -40,16 +40,16 @@
     for (int i = 0; i <= [topItems count]; i++) {
         switch (i) {
             case 0:
-                [subItems addObject:[self menTopWearSubItems]];
+                [subItems addObject:[self menCollectionSubItems]];
                 break;
             case 1:
-                [subItems addObject:[self menBottomWearSubItems]];
+                [subItems addObject:[self womenCollectionSubItems]];
                 break;
             case 2:
-                [subItems addObject:[self menFootWearSubItems]];
+                [subItems addObject:[self childrenCollectionSubItems]];
                 break;
             case 3:
-                [subItems addObject:[self menAccessoriesSubItems]];
+                [subItems addObject:[self allTypeCollectionSubItems]];
                 break;
             default:
                 break;
@@ -82,91 +82,75 @@
 }
 
 - (NSArray *)menTopLevelItems {
-    NSArray *items = @[ @"Topwear", @"Bottomwear", @"Footwear", @"Accessories" ];
+    NSArray *items = @[ @"Men", @"Women", @"Children", @"All" ];
     return items;
 }
 
-- (NSArray *)menTopWearSubItems {
+- (NSArray *)menCollectionSubItems {
     NSArray *sItems;
-    if (self.isMenwear) {
         sItems = @[
-                   @"Casual Shirts",
-                   @"T Shirts & Collered Tees",
-                   @"Formal Shirts",
-                   @"Kurthas",
-                   @"Inner & Sleepwear",
-                   @"Gym & Sportswear"
+                   @"Rings",
+                   @"Chains",
+                   @"Bracelite",
+                   @"Ear rings",
+                   @"Pendants",
+                   @"Coins"
                    ];
-    } else {
-        sItems = @[
-                   @"Shirts, Tops & Tees",
-                   @"Dresses",
-                   @"Salwars & Chridas",
-                   @"Kurthas, Kurtis & Suits",
-                   @"Shrugs & Jackets",
-                   @"Sarees",
-                   @"Ethnic Wear",
-                   @"Winter Wear"
-                   ];
-    }
     return sItems;
 }
 
-- (NSArray *)menBottomWearSubItems {
+- (NSArray *)womenCollectionSubItems {
     NSArray *sItems;
-    if (self.isMenwear) {
-        sItems = @[ @"Jeans", @"Pants/Trousers", @"Shorts", @"Track Pants" ];
-    } else {
-        sItems =
-        @[ @"Capris", @"Jeans", @"Jeggings", @"Shorts & Skirts", @"Trousers" ];
-    }
+    sItems = @[
+               @"Rings",
+               @"Chains",
+               @"Bracelite",
+               @"Ear rings",
+               @"Pendants",
+               @"Coins",
+               @"God idols",
+               @"Mangal Sutra",
+               @"Wedding special",
+               @"Daily wears",
+               @"Party wears",
+               @"Traditional",
+               @"Fasion"
+               ];
     return sItems;
 }
 
-- (NSArray *)menFootWearSubItems {
+- (NSArray *)childrenCollectionSubItems {
     NSArray *sItems;
-    if (self.isMenwear) {
-        sItems = @[
-                   @"Casual Shoes",
-                   @"Sports Shoes",
-                   @"Formal Shoes",
-                   @"Casual & Sports Sandals",
-                   @"Slippers & Flip Flops"
-                   ];
-    } else {
-        sItems = @[
-                   @"Sandals",
-                   @"Wedges",
-                   @"All Heels",
-                   @"Flats & Ballets",
-                   @"Slippers & Flip Flops",
-                   @"Casual Shoes",
-                   @"Boots",
-                   @"Socks"
-                   ];
-    }
+    sItems = @[
+               @"Rings",
+               @"Chains",
+               @"Bracelite",
+               @"Ear rings",
+               @"Pendants",
+               @"New collections"
+               ];
     return sItems;
 }
 
-- (NSArray *)menAccessoriesSubItems {
+- (NSArray *)allTypeCollectionSubItems {
     NSArray *sItems;
-    if (self.isMenwear) {
-        sItems = @[
-                   @"Belts, Ties & Cufflinks",
-                   @"Jewellery",
-                   @"Sunglasses",
-                   @"Wallets",
-                   @"Watches"
-                   ];
-    } else {
-        sItems = @[
-                   @"Bags & Wallets",
-                   @"Cosmetics & Perfumes",
-                   @"Jewellery",
-                   @"Sunglasses",
-                   @"Watches"
-                   ];
-    }
+    sItems = @[
+               @"Rings",
+               @"Chains",
+               @"Bracelite",
+               @"Ear rings",
+               @"Pendants",
+               @"Coins",
+               @"God idols",
+               @"Mangal Sutra",
+               @"Wedding special",
+               @"Daily wears",
+               @"Party wears",
+               @"Traditional",
+               @"Fasion",
+               @"New collections",
+               @"Antique"
+               ];
     return sItems;
 }
 
