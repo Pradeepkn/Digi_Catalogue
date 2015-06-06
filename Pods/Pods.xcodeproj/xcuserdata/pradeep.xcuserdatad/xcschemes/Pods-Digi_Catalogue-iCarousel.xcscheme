@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5C04E18024353624490C78BB"
+               BlueprintIdentifier = "F3A62179163C2D913F2C278C"
                BuildableName = "libPods-Digi_Catalogue-iCarousel.a"
                BlueprintName = "Pods-Digi_Catalogue-iCarousel"
                ReferencedContainer = "container:Pods.xcodeproj">

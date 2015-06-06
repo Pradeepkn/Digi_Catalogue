@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Digi_Catalogue-GWCollapsibleTable.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Digi_Catalogue-IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,17 +29,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Digi_Catalogue-UPStackMenu.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Digi_Catalogue-iCarousel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Digi_Catalogue-jastor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,92 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>20AD0D84B0A64D2095C8E3A5</key>
+		<key>32D806E30D0A0AB4C5FE8D0C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>42B38536B8FCD45BF4B999CF</key>
+		<key>395A51DD9476A7D8B0C0F130</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C04E18024353624490C78BB</key>
+		<key>7E67734B86AD9EFBBD83E2BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D7A14E1EEC7B9C4BFB22003</key>
+		<key>BC1C6C0D676326E4FDA18FA6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8650A72D73ED8F3589AB818C</key>
+		<key>D13651F7BB54C72367D6A089</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8D5BFE677503D622824BB811</key>
+		<key>D3E4B90767D8CDFBE3E88CF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FA073DFBAF5CEC9352D9A0F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>929DD459FEBE84619EFA01B5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9CE394850FBCF518F749D4A3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A375565CE73D545EF701FAF0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CECE8873772DD5D33288A094</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D0F4837C2EA16146B35F4CBD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D29E370830F7CC39C1BD604C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D50B54D68DF93331B53473A4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D72C92AD0238C90D8EF41274</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E523CB31373F3255EA3F91A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F1E5199275A4CBC9534220A3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F663EB424C93D4C1F8D5BFCF</key>
+		<key>F3A62179163C2D913F2C278C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -40,6 +40,8 @@
 		273558271ADB15790059FBE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273558261ADB15790059FBE7 /* Images.xcassets */; };
 		2735582A1ADB15790059FBE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273558281ADB15790059FBE7 /* LaunchScreen.xib */; };
 		273558361ADB157A0059FBE7 /* Digi_CatalogueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 273558351ADB157A0059FBE7 /* Digi_CatalogueTests.m */; };
+		2747E11B1B23675600367B9B /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747E1181B23675600367B9B /* Jastor.m */; };
+		2747E11C1B23675600367B9B /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747E11A1B23675600367B9B /* JastorRuntimeHelper.m */; };
 		276E64E51B011035002B1D06 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276E64E41B011035002B1D06 /* FeedBackViewController.m */; };
 		27889B911B03ED79000E6717 /* ProductItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27889B901B03ED79000E6717 /* ProductItemCell.m */; };
 		27889B951B040498000E6717 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27889B941B040498000E6717 /* DataManager.m */; };
@@ -63,7 +65,6 @@
 		27E0F3991B20AA430011DE82 /* OffersDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3711B20AA420011DE82 /* OffersDetails.m */; };
 		27E0F39A1B20AA430011DE82 /* ParserUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3741B20AA420011DE82 /* ParserUtility.m */; };
 		27E0F39B1B20AA430011DE82 /* CollectionListOfItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3771B20AA420011DE82 /* CollectionListOfItems.m */; };
-		27E0F39C1B20AA430011DE82 /* CollectionsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3791B20AA420011DE82 /* CollectionsApi.m */; };
 		27E0F39D1B20AA430011DE82 /* ListOfItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F37C1B20AA420011DE82 /* ListOfItems.m */; };
 		27E0F39E1B20AA430011DE82 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F37E1B20AA420011DE82 /* Products.m */; };
 		27E0F39F1B20AA430011DE82 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3811B20AA420011DE82 /* Reachability.m */; };
@@ -72,12 +73,9 @@
 		27E0F3A21B20AA430011DE82 /* ValidateApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F38A1B20AA420011DE82 /* ValidateApi.m */; };
 		27E0F3A31B20AA430011DE82 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F38D1B20AA430011DE82 /* WebService.m */; };
 		27E0F3A71B20AA910011DE82 /* Items.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3A61B20AA910011DE82 /* Items.m */; };
-		27E0F3AF1B20B0480011DE82 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3AC1B20B0480011DE82 /* Jastor.m */; };
-		27E0F3B01B20B0480011DE82 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3AE1B20B0480011DE82 /* JastorRuntimeHelper.m */; };
 		27E0F3BB1B20B14B0011DE82 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3B21B20B14B0011DE82 /* Cache.m */; };
 		27E0F3BC1B20B14B0011DE82 /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3B41B20B14B0011DE82 /* DataStorage.m */; };
 		27E0F3BD1B20B14B0011DE82 /* DataUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3B61B20B14B0011DE82 /* DataUtility.m */; };
-		27E0F3BE1B20B14B0011DE82 /* HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3B81B20B14B0011DE82 /* HelperMethods.m */; };
 		27E0F3BF1B20B14B0011DE82 /* PICoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0F3BA1B20B14B0011DE82 /* PICoreDataManager.m */; };
 		27E5235F1AF0078700D33D67 /* MZLoadingCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E523541AF0078700D33D67 /* MZLoadingCircle.m */; };
 		27E523601AF0078700D33D67 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E523561AF0078700D33D67 /* FXImageView.m */; };
@@ -149,6 +147,10 @@
 		2735582F1ADB157A0059FBE7 /* Digi_CatalogueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Digi_CatalogueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		273558341ADB157A0059FBE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273558351ADB157A0059FBE7 /* Digi_CatalogueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Digi_CatalogueTests.m; sourceTree = "<group>"; };
+		2747E1171B23675600367B9B /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
+		2747E1181B23675600367B9B /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
+		2747E1191B23675600367B9B /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
+		2747E11A1B23675600367B9B /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
 		276E64E31B011035002B1D06 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
 		276E64E41B011035002B1D06 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
 		27889B8F1B03ED79000E6717 /* ProductItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductItemCell.h; sourceTree = "<group>"; };
@@ -200,9 +202,6 @@
 		27E0F3741B20AA420011DE82 /* ParserUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserUtility.m; sourceTree = "<group>"; };
 		27E0F3761B20AA420011DE82 /* CollectionListOfItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionListOfItems.h; sourceTree = "<group>"; };
 		27E0F3771B20AA420011DE82 /* CollectionListOfItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionListOfItems.m; sourceTree = "<group>"; };
-		27E0F3781B20AA420011DE82 /* CollectionsApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionsApi.h; sourceTree = "<group>"; };
-		27E0F3791B20AA420011DE82 /* CollectionsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionsApi.m; sourceTree = "<group>"; };
-		27E0F37A1B20AA420011DE82 /* CollectionsApiKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionsApiKeys.h; sourceTree = "<group>"; };
 		27E0F37B1B20AA420011DE82 /* ListOfItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfItems.h; sourceTree = "<group>"; };
 		27E0F37C1B20AA420011DE82 /* ListOfItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfItems.m; sourceTree = "<group>"; };
 		27E0F37D1B20AA420011DE82 /* Products.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Products.h; sourceTree = "<group>"; };
@@ -220,18 +219,12 @@
 		27E0F38D1B20AA430011DE82 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
 		27E0F3A51B20AA910011DE82 /* Items.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Items.h; sourceTree = "<group>"; };
 		27E0F3A61B20AA910011DE82 /* Items.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Items.m; sourceTree = "<group>"; };
-		27E0F3AB1B20B0480011DE82 /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
-		27E0F3AC1B20B0480011DE82 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
-		27E0F3AD1B20B0480011DE82 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
-		27E0F3AE1B20B0480011DE82 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
 		27E0F3B11B20B14B0011DE82 /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
 		27E0F3B21B20B14B0011DE82 /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
 		27E0F3B31B20B14B0011DE82 /* DataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStorage.h; sourceTree = "<group>"; };
 		27E0F3B41B20B14B0011DE82 /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
 		27E0F3B51B20B14B0011DE82 /* DataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtility.h; sourceTree = "<group>"; };
 		27E0F3B61B20B14B0011DE82 /* DataUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtility.m; sourceTree = "<group>"; };
-		27E0F3B71B20B14B0011DE82 /* HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperMethods.h; sourceTree = "<group>"; };
-		27E0F3B81B20B14B0011DE82 /* HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperMethods.m; sourceTree = "<group>"; };
 		27E0F3B91B20B14B0011DE82 /* PICoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICoreDataManager.h; sourceTree = "<group>"; };
 		27E0F3BA1B20B14B0011DE82 /* PICoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICoreDataManager.m; sourceTree = "<group>"; };
 		27E523531AF0078700D33D67 /* MZLoadingCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZLoadingCircle.h; sourceTree = "<group>"; };
@@ -533,8 +526,6 @@
 				27E0F3B41B20B14B0011DE82 /* DataStorage.m */,
 				27E0F3B51B20B14B0011DE82 /* DataUtility.h */,
 				27E0F3B61B20B14B0011DE82 /* DataUtility.m */,
-				27E0F3B71B20B14B0011DE82 /* HelperMethods.h */,
-				27E0F3B81B20B14B0011DE82 /* HelperMethods.m */,
 				27E0F3B91B20B14B0011DE82 /* PICoreDataManager.h */,
 				27E0F3BA1B20B14B0011DE82 /* PICoreDataManager.m */,
 				27889B931B040498000E6717 /* DataManager.h */,
@@ -676,9 +667,6 @@
 			children = (
 				27E0F3761B20AA420011DE82 /* CollectionListOfItems.h */,
 				27E0F3771B20AA420011DE82 /* CollectionListOfItems.m */,
-				27E0F3781B20AA420011DE82 /* CollectionsApi.h */,
-				27E0F3791B20AA420011DE82 /* CollectionsApi.m */,
-				27E0F37A1B20AA420011DE82 /* CollectionsApiKeys.h */,
 				27E0F37B1B20AA420011DE82 /* ListOfItems.h */,
 				27E0F37C1B20AA420011DE82 /* ListOfItems.m */,
 				27E0F37D1B20AA420011DE82 /* Products.h */,
@@ -738,10 +726,10 @@
 		27E0F3AA1B20B0480011DE82 /* Jastor */ = {
 			isa = PBXGroup;
 			children = (
-				27E0F3AB1B20B0480011DE82 /* Jastor.h */,
-				27E0F3AC1B20B0480011DE82 /* Jastor.m */,
-				27E0F3AD1B20B0480011DE82 /* JastorRuntimeHelper.h */,
-				27E0F3AE1B20B0480011DE82 /* JastorRuntimeHelper.m */,
+				2747E1171B23675600367B9B /* Jastor.h */,
+				2747E1181B23675600367B9B /* Jastor.m */,
+				2747E1191B23675600367B9B /* JastorRuntimeHelper.h */,
+				2747E11A1B23675600367B9B /* JastorRuntimeHelper.m */,
 			);
 			path = Jastor;
 			sourceTree = "<group>";
@@ -917,10 +905,8 @@
 				27E0F3971B20AA430011DE82 /* LoginDetails.m in Sources */,
 				27E0F39B1B20AA430011DE82 /* CollectionListOfItems.m in Sources */,
 				271982581ADC3CF200C0FB3C /* BaseViewController.m in Sources */,
-				27E0F3BE1B20B14B0011DE82 /* HelperMethods.m in Sources */,
 				27E0F3A31B20AA430011DE82 /* WebService.m in Sources */,
 				271982BE1ADC6C1E00C0FB3C /* ProductListTableViewCell.m in Sources */,
-				27E0F3AF1B20B0480011DE82 /* Jastor.m in Sources */,
 				27E523601AF0078700D33D67 /* FXImageView.m in Sources */,
 				279D96391ADD53E900124B4C /* SplitViewController.m in Sources */,
 				271982B61ADC6C1E00C0FB3C /* DiamondSplitViewController.m in Sources */,
@@ -929,17 +915,16 @@
 				27E0F3A01B20AA430011DE82 /* SignUpApi.m in Sources */,
 				27E0F3961B20AA430011DE82 /* LoginApi.m in Sources */,
 				27E0F3941B20AA430011DE82 /* HomeScreenDetails.m in Sources */,
+				2747E11C1B23675600367B9B /* JastorRuntimeHelper.m in Sources */,
 				27E0F3A71B20AA910011DE82 /* Items.m in Sources */,
 				27E0F3911B20AA430011DE82 /* ForgotPasswordApi.m in Sources */,
 				271982BB1ADC6C1E00C0FB3C /* GalleryItemCollectionViewCell.m in Sources */,
 				27E0F3BC1B20B14B0011DE82 /* DataStorage.m in Sources */,
 				27A3DCAF1B1DE692007807F9 /* ProductDetailViewController.m in Sources */,
-				27E0F3B01B20B0480011DE82 /* JastorRuntimeHelper.m in Sources */,
 				2735581F1ADB15790059FBE7 /* Digi_Catalogue.xcdatamodeld in Sources */,
 				271982571ADC3CF200C0FB3C /* AppDelegate.m in Sources */,
 				27E523621AF0078700D33D67 /* Flickr.m in Sources */,
 				27E523631AF0078700D33D67 /* FlickrPhoto.m in Sources */,
-				27E0F39C1B20AA430011DE82 /* CollectionsApi.m in Sources */,
 				27E0F3951B20AA430011DE82 /* LoadingLogic.m in Sources */,
 				27889B911B03ED79000E6717 /* ProductItemCell.m in Sources */,
 				276E64E51B011035002B1D06 /* FeedBackViewController.m in Sources */,
@@ -957,6 +942,7 @@
 				271982C01ADC6C1E00C0FB3C /* SilverSplitViewController.m in Sources */,
 				27E0F39F1B20AA430011DE82 /* Reachability.m in Sources */,
 				279D96351ADD524000124B4C /* TabBarController.m in Sources */,
+				2747E11B1B23675600367B9B /* Jastor.m in Sources */,
 				271982BC1ADC6C1E00C0FB3C /* ProductCategoryListViewController.m in Sources */,
 				27E523611AF0078700D33D67 /* UIImage+FX.m in Sources */,
 				27889B951B040498000E6717 /* DataManager.m in Sources */,

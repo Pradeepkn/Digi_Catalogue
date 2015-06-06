@@ -12,7 +12,7 @@ pod 'MBProgressHUD', '~> 0.8'
 # pod 'MagicalRecord', '~> 2.2'
 pod 'MagicalRecord', :git => 'https://github.com/magicalpanda/MagicalRecord.git', :tag => 'v2.3.0-beta.5'
 # class object mapping
-pod 'jastor', '~>0.2.1'
+#pod 'jastor', '~>0.2.1'
 #pod 'UPStackMenu'
 #pod 'GWCollapsibleTable', '~>0.1.0'
 end

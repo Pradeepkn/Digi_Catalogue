@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D72C92AD0238C90D8EF41274"
+               BlueprintIdentifier = "395A51DD9476A7D8B0C0F130"
                BuildableName = "libPods-Digi_Catalogue-MagicalRecord.a"
                BlueprintName = "Pods-Digi_Catalogue-MagicalRecord"
                ReferencedContainer = "container:Pods.xcodeproj">
