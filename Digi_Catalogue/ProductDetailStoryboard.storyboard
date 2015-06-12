@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AZ8-Tc-RG1">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
@@ -17,30 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myg-Tl-8ZM">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myg-Tl-8ZM">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AZ8-Tc-RG1" id="XFG-0t-mmz"/>
+                                </connections>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mod.png" translatesAutoresizingMaskIntoConstraints="NO" id="g90-DV-VRf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mod.png" translatesAutoresizingMaskIntoConstraints="NO" id="g90-DV-VRf">
                                 <rect key="frame" x="40" y="64" width="520" height="471"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtP-qE-UrV">
-                                <rect key="frame" x="250" y="490" width="100" height="100"/>
+                                <rect key="frame" x="280" y="550" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="QoG-vP-Qaz"/>
-                                    <constraint firstAttribute="height" constant="100" id="rbs-rg-fIL"/>
+                                    <constraint firstAttribute="width" constant="40" id="QoG-vP-Qaz"/>
+                                    <constraint firstAttribute="height" constant="40" id="rbs-rg-fIL"/>
                                 </constraints>
-                                <state key="normal" image="star3">
+                                <state key="normal" image="plus_icon" backgroundImage="side_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="discloseProductDetailsButtonClicked:" destination="AZ8-Tc-RG1" eventType="touchUpInside" id="aJZ-rC-Ulk"/>
                                 </connections>
                             </button>
-                            <view alpha="0.79999999999999982" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="en6-bd-3AE">
-                                <rect key="frame" x="50" y="80" width="500" height="370"/>
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="en6-bd-3AE">
+                                <rect key="frame" x="50" y="80" width="500" height="430"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWG-sr-kdR">
-                                        <rect key="frame" x="8" y="8" width="484" height="354"/>
+                                        <rect key="frame" x="8" y="8" width="484" height="414"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -84,7 +86,6 @@
                             <constraint firstItem="nsT-tG-Xl6" firstAttribute="top" secondItem="myg-Tl-8ZM" secondAttribute="bottom" id="fLr-aA-IfL"/>
                             <constraint firstAttribute="trailing" secondItem="g90-DV-VRf" secondAttribute="trailing" constant="40" id="qqo-1r-nH9"/>
                             <constraint firstItem="g90-DV-VRf" firstAttribute="top" secondItem="tH9-HN-63k" secondAttribute="bottom" constant="44" id="sXH-MX-zOf"/>
-                            <constraint firstItem="nsT-tG-Xl6" firstAttribute="top" secondItem="g90-DV-VRf" secondAttribute="bottom" constant="65" id="sh3-Lf-AtX"/>
                             <constraint firstItem="myg-Tl-8ZM" firstAttribute="leading" secondItem="Srz-xC-rv8" secondAttribute="leading" id="v9Q-xU-KYB"/>
                             <constraint firstItem="wtP-qE-UrV" firstAttribute="top" secondItem="en6-bd-3AE" secondAttribute="bottom" constant="40" id="y7V-uP-3Nr"/>
                             <constraint firstItem="en6-bd-3AE" firstAttribute="top" secondItem="tH9-HN-63k" secondAttribute="bottom" constant="60" id="zXU-Qz-IyS"/>
@@ -106,6 +107,7 @@
     <resources>
         <image name="close" width="25" height="25"/>
         <image name="mod.png" width="1024" height="768"/>
-        <image name="star3" width="100" height="100"/>
+        <image name="plus_icon" width="20" height="20"/>
+        <image name="side_button" width="48" height="48"/>
     </resources>
 </document>

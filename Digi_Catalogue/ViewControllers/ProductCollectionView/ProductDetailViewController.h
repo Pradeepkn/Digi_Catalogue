@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProductDetailViewController : UIViewController
+@interface ProductDetailViewController : UIViewController<UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *itemsArray;
 @property (nonatomic, assign) NSInteger selectedIndex;

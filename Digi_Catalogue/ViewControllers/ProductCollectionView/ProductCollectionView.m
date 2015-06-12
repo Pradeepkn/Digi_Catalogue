@@ -70,7 +70,9 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     collectionApi.apiType = Get;
     collectionApi.cacheing = CACHE_MEMORY;
     collectionApi.collectionApiName = [NSMutableString stringWithFormat:@"%@", self.collectionType];
+    [self showLoading];
     [[DataUtility sharedInstance] dataForObject:collectionApi response:^(APIBase *response, DataType dataType) {
+        [self hideLoadingMode];
         if (collectionApi.errorCode == 0) {
             if (!self.imagesArray) {
                 self.imagesArray = [[NSMutableArray alloc] init];
@@ -108,7 +110,7 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 
 - (void)segmentedControlChangedValue:(UISegmentedControl *)segmentControl {
     self.selectedSearchOption = segmentControl.selectedSegmentIndex;
-    
+    [self showLoading];
     switch (_selectedSearchOption) {
         case SearchItemByPrice: {
             [self callGoldCollectionApiWithType:@"price"];
@@ -148,6 +150,12 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
   cell.priceLabel.text = [NSString stringWithFormat:@"Price: र %@", item.price];
     [cell.wishListButton addTarget:self action:@selector(addToWishList:) forControlEvents:UIControlEventTouchUpInside];
     [cell.shareButton addTarget:self action:@selector(shareItem:) forControlEvents:UIControlEventTouchUpInside];
+    DataManager *dataManager = [DataManager sharedInstance];
+    if ([dataManager.favouritesArray containsObject:item]) {
+        [cell.wishListButton setImage:[UIImage imageNamed:@"fav_selected_onlist.png"] forState:UIControlStateNormal];
+    }else{
+        [cell.wishListButton setImage:[UIImage imageNamed:@"fav_unselected_onlist.png"] forState:UIControlStateNormal];
+    }
     cell.wishListButton.tag = indexPath.row;
     cell.shareButton.tag = indexPath.row;
     selectedIndex = indexPath.row;
@@ -304,14 +312,8 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
         return;
     }
     BOOL isObjectPresent = NO;
-    for (Items *itemResults in dataManager.favouritesArray) {
-        if ([item.uri isEqualToString:itemResults.uri]) {
-            isObjectPresent = NO;
-            continue;
-        }else{
-            isObjectPresent = YES;
-            break;
-        }
+    if ([dataManager.favouritesArray containsObject:item]) {
+        isObjectPresent = YES;
     }
     if (!isObjectPresent) {
         [dataManager.favouritesArray addObject:item];
@@ -319,7 +321,6 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     else {
         [dataManager.favouritesArray removeObject:item];
     }
-    
     [self.galleryCollectionView reloadData];
 }
 

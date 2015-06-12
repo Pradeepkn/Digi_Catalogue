@@ -641,6 +641,9 @@ A new look and feel for our brand was never an easy decision, but it was importa
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ZbW-uP-gKZ" id="dFR-m0-lkC"/>
+                                        </connections>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1.png" translatesAutoresizingMaskIntoConstraints="NO" id="XJD-6m-Keq">
                                         <rect key="frame" x="304" y="8" width="288" height="253"/>
@@ -686,6 +689,7 @@ A new look and feel for our brand was never an easy decision, but it was importa
                     <tabBarItem key="tabBarItem" title="Home" id="iPL-08-sOl"/>
                     <connections>
                         <outlet property="carousel" destination="rYn-Fc-vvk" id="jsl-yM-2ID"/>
+                        <outlet property="homeTextView" destination="YWk-eJ-s2v" id="D6s-yc-Pcq"/>
                         <outlet property="offersImageView" destination="XJD-6m-Keq" id="jap-gD-Att"/>
                     </connections>
                 </viewController>

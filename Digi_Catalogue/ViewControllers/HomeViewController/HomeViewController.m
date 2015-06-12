@@ -11,7 +11,9 @@
 #import "OffersApi.h"
 #import "DataUtility.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () {
+    CGFloat contentHeight;
+}
 
 @property(strong, nonatomic) NSMutableArray *corouselDataSource;
 @property(strong, nonatomic) NSMutableArray *imagesArray;
@@ -19,6 +21,7 @@
 @property(strong, nonatomic) NSMutableArray *offersImagesArray;
 @property(weak, nonatomic) IBOutlet UIImageView *offersImageView;
 @property(weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (weak, nonatomic) IBOutlet UITextView *homeTextView;
 
 @end
 
@@ -26,29 +29,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    contentHeight = - (self.homeTextView.frame.size.height/2);
+    [self.homeTextView setContentOffset: CGPointMake(0,contentHeight) animated:NO];
     self.carousel.type = iCarouselTypeCylinder;
+     [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(changeTextViewOffset) userInfo:nil repeats:YES];
     [self callOffersApi];
 }
+
+- (void)changeTextViewOffset {
+    contentHeight++;
+    if (contentHeight == self.homeTextView.contentSize.height - (self.homeTextView.frame.size.height/2)) {
+        contentHeight = - (self.homeTextView.frame.size.height/2);
+    }
+    [UIView animateWithDuration:0.1 animations:^{
+        [self.homeTextView setContentOffset: CGPointMake(0,contentHeight) animated:YES];
+    }];
+}
+
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
     self.arrayOfImages = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"banner1.png"], [UIImage imageNamed:@"banner2.png"], [UIImage imageNamed:@"banner3.png"], [UIImage imageNamed:@"banner4.png"], [UIImage imageNamed:@"banner5.png"], [UIImage imageNamed:@"banner6.png"], nil];
 
     return [self.arrayOfImages count];
-}
-
-- (void)animateBackgroundImages {
-    NSMutableArray *emmaImagesArray = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"banner1.png"], [UIImage imageNamed:@"banner2.png"],[UIImage imageNamed:@"banner3.png"],[UIImage imageNamed:@"banner4.png"],[UIImage imageNamed:@"banner5.png"],[UIImage imageNamed:@"banner6.png"],nil];
-    NSInteger randomNumber = arc4random() % 6;
-    UIImage *image = (UIImage *)[emmaImagesArray objectAtIndex:randomNumber];
-    [UIView animateWithDuration:1 animations:^{
-        CATransition *transition = [CATransition animation];
-        transition.duration = 3.0f;
-        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        transition.type = kCATransitionFade;
-        self.offersImageView.image = image;
-        [self.offersImageView.layer addAnimation:transition forKey:nil];
-        [self.offersImageView startAnimating];
-    }];
 }
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
