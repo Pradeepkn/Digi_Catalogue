@@ -82,6 +82,7 @@
 - (IBAction)signInSignUpButtonClicked:(id)sender {
     self.signInContainerView.hidden = YES;
     self.signUpContainerView.hidden = NO;
+    self.forGotPasswordMainContainerView.hidden = YES;
 }
 
 - (IBAction)forgotPasswordResetButtonClicked:(id)sender {
