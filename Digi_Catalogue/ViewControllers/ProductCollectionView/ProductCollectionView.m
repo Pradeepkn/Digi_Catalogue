@@ -61,6 +61,10 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     [self initializeSearchView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.itemSearchBar resignFirstResponder];
+}
 - (void)callGoldCollectionApiWithType:(NSString *)type {
     CollectionsApi *collectionApi = [[CollectionsApi alloc] init];
     collectionApi.apiType = Get;
@@ -178,12 +182,13 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 #pragma mark - search delegates.
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-//    [self abortSearchingMode];
+    [self abortSearchingMode];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)theSearchBar {
 //    self.searchListArray = [NSMutableArray arrayWithArray:[self sortArrayForCurrentSearchOption]];
 //    [self doneSearchingClicked];
+    [theSearchBar resignFirstResponder];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar {
@@ -199,12 +204,14 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     _itemSearchBar.text = @"";
     _searchFlags.searching = YES;
     [self reloadCollectionView];
+    [self.itemSearchBar resignFirstResponder];
 }
 
 
 - (void)abortSearchingMode {
     _searchFlags.searching = NO;
     _itemSearchBar.text = @"";
+    [self.itemSearchBar resignFirstResponder];
     [self.searchListArray removeAllObjects];
     [self reloadCollectionView];
 }

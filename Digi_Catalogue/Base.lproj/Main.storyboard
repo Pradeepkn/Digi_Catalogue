@@ -322,7 +322,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="faceBookButtonClicked:" destination="1lZ-0T-Fzy" eventType="touchUpInside" id="sKV-B0-Dof"/>
+                                            <action selector="forgotPasswordButtonClicked:" destination="1lZ-0T-Fzy" eventType="touchUpInside" id="lZA-Bs-t3o"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -122,13 +121,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDF-eH-bG1">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Rwn-PL-toj">
+                                    <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rwn-PL-toj">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="YyZ-4h-fMq"/>
                                         </constraints>
                                         <color key="barTintColor" red="0.67479476427292817" green="0.60092939756550312" blue="0.23413261944855021" alpha="1" colorSpace="calibratedRGB"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="86a-EJ-PyK" id="af8-HQ-uLN"/>
                                         </connections>
@@ -194,7 +193,7 @@
                     </view>
                     <connections>
                         <outlet property="galleryCollectionView" destination="Tzh-f5-KIC" id="fLd-Jt-dBE"/>
-                        <outlet property="itemSearchBar" destination="Rwn-PL-toj" id="NCm-Gj-y3z"/>
+                        <outlet property="itemSearchBar" destination="Rwn-PL-toj" id="4fj-zh-dio"/>
                         <outlet property="searchDisplayController" destination="z9i-oV-tsX" id="Pqs-Em-ctB"/>
                         <outlet property="segmentedFilterBar" destination="w18-Ml-Del" id="ocL-uj-4Ey"/>
                     </connections>
@@ -203,7 +202,6 @@
                 <searchDisplayController id="z9i-oV-tsX">
                     <connections>
                         <outlet property="delegate" destination="86a-EJ-PyK" id="8Aj-2s-ruy"/>
-                        <outlet property="searchBar" destination="Rwn-PL-toj" id="v1F-SO-ht6"/>
                         <outlet property="searchContentsController" destination="86a-EJ-PyK" id="tTX-4t-RG8"/>
                         <outlet property="searchResultsDataSource" destination="86a-EJ-PyK" id="My9-1k-5oc"/>
                         <outlet property="searchResultsDelegate" destination="86a-EJ-PyK" id="dF2-uo-Pcu"/>

@@ -66,7 +66,7 @@
 - (IBAction)faceBookButtonClicked:(id)sender {
     self.signInContainerView.hidden = YES;
     self.signUpContainerView.hidden = YES;
-    self.forGotPasswordMainContainerView.hidden = NO;
+    self.forGotPasswordMainContainerView.hidden = YES;
     [self callLoginApi];
 }
 
@@ -89,6 +89,12 @@
     self.signInContainerView.hidden = NO;
     self.signUpContainerView.hidden = YES;
     self.forGotPasswordMainContainerView.hidden = YES;
+}
+
+- (IBAction)forgotPasswordButtonClicked:(id)sender {
+    self.signInContainerView.hidden = YES;
+    self.signUpContainerView.hidden = YES;
+    self.forGotPasswordMainContainerView.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
