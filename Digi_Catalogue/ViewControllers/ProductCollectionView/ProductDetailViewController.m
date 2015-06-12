@@ -68,6 +68,12 @@
     [UIView animateWithDuration:0.3 animations:^{
         [sender.imageView.layer setAffineTransform:CGAffineTransformRotate(CGAffineTransformIdentity, angle)];
     }];
+    CATransition *animation = [CATransition animation];
+    [animation setDelegate:self];
+    [animation setDuration:2.0f];
+    [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+    [animation setType:@"rippleEffect" ];
+    [self.productDetailContainerView.layer addAnimation:animation forKey:NULL];
     self.productDetailContainerView.hidden = NO;
 }
 

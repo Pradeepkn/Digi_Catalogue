@@ -153,6 +153,8 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     DataManager *dataManager = [DataManager sharedInstance];
     if ([dataManager.favouritesArray containsObject:item]) {
         [cell.wishListButton setImage:[UIImage imageNamed:@"fav_selected_onlist.png"] forState:UIControlStateNormal];
+        [self showRippleFor:cell.wishListButton];
+
     }else{
         [cell.wishListButton setImage:[UIImage imageNamed:@"fav_unselected_onlist.png"] forState:UIControlStateNormal];
     }
@@ -341,5 +343,13 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
                                           }];
 }
 
+- (void)showRippleFor:(UIView *)view {
+    CATransition *animation = [CATransition animation];
+    [animation setDelegate:self];
+    [animation setDuration:1.0f];
+    [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+    [animation setType:@"rippleEffect" ];
+    [view.layer addAnimation:animation forKey:NULL];
+}
 
 @end
