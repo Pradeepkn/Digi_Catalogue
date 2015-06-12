@@ -36,19 +36,19 @@ static NSString *const kSplitViewStoryBoard = @"SplitViewStoryBoard";
   NSMutableArray *tabbarItems = [NSMutableArray array];
 
     HomeViewController *homeVC = (HomeViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
-    homeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"HOME" image:[UIImage imageNamed:@"new_chat_icon"] tag:1];
+    homeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"HOME" image:[UIImage imageNamed:@"home"] tag:1];
 
     SplitViewController *goldVC = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
-    goldVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"GOLD" image:[UIImage imageNamed:@"new_chat_icon"] tag:2];
+    goldVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"GOLD" image:[UIImage imageNamed:@"plus_icon"] tag:2];
 
     SplitViewController *silverVC = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
-    silverVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"SILVER" image:[UIImage imageNamed:@"new_chat_icon"] tag:3];
+    silverVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"SILVER" image:[UIImage imageNamed:@"plus_icon"] tag:3];
 
     SplitViewController *diamondVC = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
-    diamondVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"DIAMOND" image:[UIImage imageNamed:@"new_chat_icon"] tag:4];
+    diamondVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"DIAMOND" image:[UIImage imageNamed:@"plus_icon"] tag:4];
 
     SplitViewController *platinumVC = (SplitViewController *)[[UIStoryboard storyboardWithName:kSplitViewStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SplitViewController class])];
-    platinumVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"PLATINUM" image:[UIImage imageNamed:@"new_chat_icon"] tag:5];
+    platinumVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"PLATINUM" image:[UIImage imageNamed:@"plus_icon"] tag:5];
 
     SettingViewController *settingVC = (SettingViewController *)[[UIStoryboard storyboardWithName:kMainStoryBoard bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:NSStringFromClass([SettingViewController class])];
     settingVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"SETTINGS" image:[UIImage imageNamed:@"settings_icon"] tag:6];
@@ -65,6 +65,8 @@ static NSString *const kSplitViewStoryBoard = @"SplitViewStoryBoard";
   [tabbarItems addObject:feedbackVC];
 
   [self setViewControllers:tabbarItems animated:YES];
+    [[UITabBar appearance] setTintColor:[UIColor redColor]];
+//    [[UITabBar appearance] setBarTintColor:[UIColor yellowColor]];
 //    [self setupYALTabBarController];
 
 }

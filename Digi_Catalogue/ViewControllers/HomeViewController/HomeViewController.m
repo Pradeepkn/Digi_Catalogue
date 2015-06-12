@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "iCarousel.h"
+#import "OffersApi.h"
+#import "DataUtility.h"
 
 @interface HomeViewController ()
 
@@ -25,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.carousel.type = iCarouselTypeCylinder;
-    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(animateBackgroundImages) userInfo:nil repeats:YES];
+    [self callOffersApi];
 }
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
@@ -84,6 +86,61 @@
 //    self.itemLable.text  = [NSString stringWithFormat:@"%@",[self.self.arrayOfImages objectAtIndex:0]];
     
     return view;
+}
+
+- (void)callOffersApi
+{
+    if (!self.offersImagesArray) {
+        self.offersImagesArray = [[NSMutableArray alloc] init];
+    }
+    self.offersImageView.image = [UIImage imageNamed:@"o6.png"];
+    [self.offersImagesArray addObject:[UIImage imageNamed:@"o1.png"]];
+    [self.offersImagesArray addObject:[UIImage imageNamed:@"o2.png"]];
+    [self.offersImagesArray addObject:[UIImage imageNamed:@"o3.png"]];
+    [self.offersImagesArray addObject:[UIImage imageNamed:@"o4.png"]];
+    [self.offersImagesArray addObject:[UIImage imageNamed:@"o5.png"]];
+    [self.offersImagesArray addObject:[UIImage imageNamed:@"o6.png"]];
+     [NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(offersImageAnimationWithImages) userInfo:nil repeats:YES];
+//    OffersApi *offersApi = [[OffersApi alloc] init];
+//    _imagesArray = [[NSMutableArray alloc] init];
+//    offersApi.apiType = Get;
+//    offersApi.cacheing = CACHE_PERSISTANT;
+//    if (!self.offersImagesArray) {
+//        self.offersImagesArray = [[NSMutableArray alloc] init];
+//    }
+//    [[DataUtility sharedInstance] dataForObject:offersApi response:^(APIBase *response, DataType dataType) {
+//        if (offersApi.errorCode == 0) {
+//            for (OffersDetails *offersDetails in offersApi.offers) {
+//                
+//                UIImageView *temp = [[UIImageView alloc] init];
+//                [temp sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:offersDetails.offer_image] andPlaceholderImage:[UIImage imageNamed:@"loading.png"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//                } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                    if (image) {
+//                        [self.offersImagesArray addObject:image];
+//                    }
+//                }];
+//            }
+//            [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(offersImageAnimationWithImages) userInfo:nil repeats:YES];
+//        }
+//    }];
+}
+
+- (void)offersImageAnimationWithImages
+{
+//    dispatch_async(dispatch_get_main_queue(), ^{
+        NSInteger randomNumber = arc4random() % self.offersImagesArray.count;
+        UIImage *image = (UIImage *)[self.offersImagesArray objectAtIndex:randomNumber];
+        [UIView animateWithDuration:1 animations:^{
+            CATransition *transition = [CATransition animation];
+            transition.duration = 1.0f;
+            transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+            transition.type = kCATransitionFade;
+            self.offersImageView.image = image;
+            self.offersImageView.contentMode = UIViewContentModeScaleAspectFit;
+            [self.offersImageView.layer addAnimation:transition forKey:nil];
+            [self.offersImageView startAnimating];
+        }];
+//    });
 }
 
 - (void)didReceiveMemoryWarning {
