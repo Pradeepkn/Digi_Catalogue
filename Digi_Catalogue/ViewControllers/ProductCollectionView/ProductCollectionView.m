@@ -324,18 +324,20 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 }
 
 - (void)shareItem:(UIButton *)shareButton{
-//    Items *item = (Items *)[self.dataSourceArray objectAtIndex:shareButton.tag];
-//    NSString *sharecodeApp =  @"This text is to test the sharing.";
-//    NSURL *url = [NSURL URLWithString:@"http://www.cheripo.com"];
-//    UIImage *image = [UIImage imageNamed:@"default_product_image.png"];
-//    UIActivityViewController *activityViewController =
-//    [[UIActivityViewController alloc] initWithActivityItems:@[sharecodeApp, url, image]
-//                                      applicationActivities:nil];
-//    [self.navigationController presentViewController:activityViewController
-//                                            animated:YES
-//                                          completion:^{
-//                                              // ...
-//                                          }];
+    UIImageView *imageView = [[UIImageView alloc] init];
+    Items *item = (Items *)[self.dataSourceArray objectAtIndex:shareButton.tag];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:item.uri] placeholderImage:[UIImage imageNamed:@"star4"]];
+    NSString *sharecodeApp =  @"I am interested in this item. Can you suggest me regarding my choice.";
+    NSURL *url = [NSURL URLWithString:@"http://www.brinvets.com"];
+    UIActivityViewController *activityViewController =
+    [[UIActivityViewController alloc] initWithActivityItems:@[sharecodeApp, url, imageView.image]
+                                      applicationActivities:nil];
+    activityViewController.popoverPresentationController.sourceView = shareButton;
+    [self.navigationController presentViewController:activityViewController
+                                            animated:YES
+                                          completion:^{
+                                              // ...
+                                          }];
 }
 
 
