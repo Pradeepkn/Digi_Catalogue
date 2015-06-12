@@ -431,7 +431,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.71806091070175171" green="0.64249617047080632" blue="0.27226521217018962" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.76314206669999995" blue="0.24552337299999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="UDQ-RX-gRh" firstAttribute="top" secondItem="9eZ-5n-1zQ" secondAttribute="top" constant="26" id="Tej-vP-ITp"/>
                                     <constraint firstAttribute="trailing" secondItem="UDQ-RX-gRh" secondAttribute="trailing" constant="8" id="U1h-De-EcZ"/>
@@ -607,8 +607,22 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8L-Yb-hDx">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                                <color key="backgroundColor" red="0.7180609107" green="0.64249617049999996" blue="0.2722652122" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Brinvents Technologies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6s2-UF-KGg">
+                                        <rect key="frame" x="8" y="26" width="584" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Ubi-xF-lA7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.76314206669999995" blue="0.24552337299999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6s2-UF-KGg" secondAttribute="bottom" constant="8" id="CAU-md-faL"/>
+                                    <constraint firstAttribute="trailing" secondItem="6s2-UF-KGg" secondAttribute="trailing" constant="8" id="NT6-Pc-tao"/>
+                                    <constraint firstItem="6s2-UF-KGg" firstAttribute="leading" secondItem="u8L-Yb-hDx" secondAttribute="leading" constant="8" id="PMl-Bq-Q2g"/>
                                     <constraint firstAttribute="height" constant="64" id="doS-R6-gn5"/>
                                 </constraints>
                             </view>
@@ -624,8 +638,8 @@ Change changes everything but change. Even in these changing times, it’s the t
 Deeply understanding and protecting the jewellery traditions of our country was always our primary mission. And the insights gained formed the driving force behind something even bigger, a noble task of taking our treasures to the world. We have put a foot forward in this direction, starting with South East Asia and culminating at the finest fashion streets of the globe.
 
 A new look and feel for our brand was never an easy decision, but it was important for Malabar Gold and Diamonds to have an international appeal. Especially when we are all set to celebrate the beauty of life, by being the torch bearers of contemporary tradition. We proudly present the new face of Indian jewellery heritage; a new expression inspired by the latest in international design without compromising the values of our proud culture.</string>
-                                        <color key="textColor" red="0.40987569065248619" green="0.29922256340615905" blue="0.24080464991806325" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1.png" translatesAutoresizingMaskIntoConstraints="NO" id="XJD-6m-Keq">
@@ -703,11 +717,11 @@ A new look and feel for our brand was never an easy decision, but it was importa
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wxi-pk-34O" customClass="TabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleAspectFill" barStyle="black" id="9wY-sq-EX7">
+                    <tabBar key="tabBar" contentMode="scaleAspectFill" id="9wY-sq-EX7">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.97647058819999999" green="0.94998702378666688" blue="0.7040897102381477" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.97647058819999999" green="0.76314206673799967" blue="0.24552337298399182" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="0.99607843139999996" green="0.95697845240000001" blue="0.7052440203" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>

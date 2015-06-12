@@ -126,7 +126,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="YyZ-4h-fMq"/>
                                         </constraints>
-                                        <color key="barTintColor" red="0.67479476427292817" green="0.60092939756550312" blue="0.23413261944855021" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="barTintColor" red="0.97647058819999999" green="0.76314206669999995" blue="0.24552337299999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="86a-EJ-PyK" id="af8-HQ-uLN"/>
@@ -210,7 +210,7 @@
             </objects>
             <point key="canvasLocation" x="3518" y="-1508"/>
         </scene>
-        <!--Gold Category-->
+        <!--Categories-->
         <scene sceneID="NBY-Dx-SAV">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="E2s-pc-7fE" customClass="ProductCategoryListViewController" sceneMemberID="viewController">
@@ -274,7 +274,7 @@
                             <outlet property="delegate" destination="E2s-pc-7fE" id="MBe-15-xil"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Gold Category" id="bog-7I-uif"/>
+                    <navigationItem key="navigationItem" title="Categories" id="bog-7I-uif"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qy7-Mt-SIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -287,7 +287,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XLp-CM-aVy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.7180609107" green="0.64249617049999996" blue="0.2722652122" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.97647058819999999" green="0.76314206669999995" blue="0.24552337299999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="26"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
