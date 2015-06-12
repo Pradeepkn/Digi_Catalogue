@@ -140,7 +140,7 @@
     [[DataUtility sharedInstance] dataForObject:loginApi response:^(APIBase *response, DataType dataType) {
         if (loginApi.errorCode == 0) {
             [[LoadingLogic sharedLoadingLogic] startBackGroundLoading];
-            [self performSelector:@selector(pushToHomeScreen) withObject:nil afterDelay:6];
+            [self performSelector:@selector(pushToHomeScreen) withObject:nil afterDelay:2];
         }
     }];
 }

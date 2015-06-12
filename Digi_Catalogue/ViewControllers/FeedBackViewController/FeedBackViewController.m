@@ -52,10 +52,12 @@
         default:
             break;
     }
+}
+
+- (IBAction)sendFeedBackButtonClicked:(id)sender {
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thank you!!" message:@"Thanks for your feedback. We will try to improve the quality of service" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alertView show];
-    
 }
 
 /*
