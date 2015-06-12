@@ -55,27 +55,62 @@
                                                     <color key="textColor" red="0.27389071132596687" green="0.27389071132596687" blue="0.27389071132596687" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QP-ua-V5g">
+                                                    <rect key="frame" x="90" y="8" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="kPi-hU-7GV"/>
+                                                        <constraint firstAttribute="height" constant="30" id="v9z-8n-bxE"/>
+                                                    </constraints>
+                                                    <state key="normal" image="fav_unselected_onlist">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpU-fP-jCk">
+                                                    <rect key="frame" x="122" y="8" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="JTe-3d-oPD"/>
+                                                        <constraint firstAttribute="height" constant="30" id="e5c-Ls-eWU"/>
+                                                    </constraints>
+                                                    <state key="normal" image="share">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="jsZ-iq-SGZ" firstAttribute="trailing" secondItem="aun-Rl-1h3" secondAttribute="trailing" id="0hI-q6-Ocb"/>
+                                            <constraint firstItem="4QP-ua-V5g" firstAttribute="top" secondItem="qEB-ng-XvX" secondAttribute="top" constant="8" id="5Ta-1p-4Ea"/>
                                             <constraint firstItem="aun-Rl-1h3" firstAttribute="leading" secondItem="qEB-ng-XvX" secondAttribute="leading" id="76V-S9-Ldz"/>
                                             <constraint firstItem="jsZ-iq-SGZ" firstAttribute="top" secondItem="qEB-ng-XvX" secondAttribute="top" id="7Ve-8n-0Eu"/>
+                                            <constraint firstItem="LpU-fP-jCk" firstAttribute="leading" secondItem="4QP-ua-V5g" secondAttribute="trailing" constant="2" id="RRX-nN-IRy"/>
                                             <constraint firstItem="aun-Rl-1h3" firstAttribute="top" secondItem="jsZ-iq-SGZ" secondAttribute="bottom" constant="8" id="RiX-PM-4uA"/>
+                                            <constraint firstItem="4QP-ua-V5g" firstAttribute="top" secondItem="qEB-ng-XvX" secondAttribute="top" constant="8" id="WIP-pE-mh4"/>
                                             <constraint firstItem="jsZ-iq-SGZ" firstAttribute="leading" secondItem="aun-Rl-1h3" secondAttribute="leading" id="WO3-h0-pdl"/>
                                             <constraint firstItem="fth-E0-eb1" firstAttribute="height" secondItem="aun-Rl-1h3" secondAttribute="height" id="Xnr-z9-awH"/>
                                             <constraint firstAttribute="trailing" secondItem="aun-Rl-1h3" secondAttribute="trailing" id="e2H-c5-atc"/>
+                                            <constraint firstItem="LpU-fP-jCk" firstAttribute="top" secondItem="qEB-ng-XvX" secondAttribute="top" constant="8" id="g2p-91-tUy"/>
                                             <constraint firstItem="fth-E0-eb1" firstAttribute="leading" secondItem="qEB-ng-XvX" secondAttribute="leading" id="hwf-LO-4Fl"/>
                                             <constraint firstItem="fth-E0-eb1" firstAttribute="top" secondItem="aun-Rl-1h3" secondAttribute="bottom" constant="8" id="s9d-Ab-XEB"/>
+                                            <constraint firstAttribute="trailing" secondItem="4QP-ua-V5g" secondAttribute="trailing" constant="4" id="sXU-ov-SQB"/>
                                             <constraint firstItem="fth-E0-eb1" firstAttribute="width" secondItem="aun-Rl-1h3" secondAttribute="width" id="tJb-Jy-3HV"/>
                                             <constraint firstAttribute="trailing" secondItem="fth-E0-eb1" secondAttribute="trailing" id="tfg-HF-RR0"/>
                                             <constraint firstItem="fth-E0-eb1" firstAttribute="top" secondItem="aun-Rl-1h3" secondAttribute="bottom" constant="8" id="yKG-tV-YGf"/>
+                                            <constraint firstAttribute="trailing" secondItem="LpU-fP-jCk" secondAttribute="trailing" constant="8" id="zWY-yK-KT3"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="5Ta-1p-4Ea"/>
+                                                <exclude reference="sXU-ov-SQB"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="galleryImageView" destination="jsZ-iq-SGZ" id="aVo-fK-yRX"/>
+                                            <outlet property="imagePoweredByLabel" destination="fth-E0-eb1" id="QvJ-hE-lDp"/>
                                             <outlet property="imageTitle" destination="aun-Rl-1h3" id="nBR-mp-ZwT"/>
                                             <outlet property="priceLabel" destination="fth-E0-eb1" id="uAj-aD-ELA"/>
+                                            <outlet property="shareButton" destination="LpU-fP-jCk" id="SV2-De-WPs"/>
+                                            <outlet property="wishListButton" destination="4QP-ua-V5g" id="gOg-36-2iv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -285,5 +320,7 @@
     </scenes>
     <resources>
         <image name="banner1.png" width="1250" height="391"/>
+        <image name="fav_unselected_onlist" width="50" height="50"/>
+        <image name="share" width="30" height="25"/>
     </resources>
 </document>

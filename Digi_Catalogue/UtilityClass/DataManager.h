@@ -12,6 +12,8 @@
 
 @interface DataManager : NSObject
 
+@property (nonatomic, strong) NSMutableArray *favouritesArray;
+
 /*!
  @abstract Shared instance to get and to store app data
  @discussion This class will made available through out app to access data

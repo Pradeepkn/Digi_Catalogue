@@ -17,6 +17,7 @@
     
     dispatch_once(&onceToken, ^{
         sharedInstance = [[super allocWithZone:NULL] init];
+        sharedInstance.favouritesArray = [[NSMutableArray alloc] init];
     });
     
     return sharedInstance;

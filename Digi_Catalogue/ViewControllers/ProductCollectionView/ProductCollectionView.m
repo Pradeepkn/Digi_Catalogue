@@ -134,6 +134,10 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
   [cell.galleryImageView sd_setImageWithURL:[NSURL URLWithString:item.uri] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
   cell.imageTitle.text = @"Purity: 22 kr";
   cell.priceLabel.text = [NSString stringWithFormat:@"Price: र %@", @"28,000"];
+    [cell.wishListButton addTarget:self action:@selector(addToWishList:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.shareButton addTarget:self action:@selector(shareItem:) forControlEvents:UIControlEventTouchUpInside];
+    cell.wishListButton.tag = indexPath.row;
+    cell.shareButton.tag = indexPath.row;
   return cell;
 }
 
@@ -245,6 +249,47 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     }
     
     [self reloadCollectionView];
+}
+
+- (void)addToWishList:(UIButton *)wishListButton{
+    Items *item = (Items *)[self.dataSourceArray objectAtIndex:wishListButton.tag];
+    DataManager *dataManager = [DataManager sharedInstance];
+    if (dataManager.favouritesArray.count == 0) {
+        [dataManager.favouritesArray addObject:item];
+        [self.galleryCollectionView reloadData];
+        return;
+    }
+    BOOL isObjectPresent = NO;
+    for (Items *itemResults in dataManager.favouritesArray) {
+        if ([item.uri isEqualToString:itemResults.uri]) {
+            isObjectPresent = NO;
+            continue;
+        }else{
+            isObjectPresent = YES;
+            break;
+        }
+    }
+    if (!isObjectPresent) {
+        [dataManager.favouritesArray addObject:item];
+    }else{
+        [dataManager.favouritesArray removeObject:item];
+    }
+    [self.galleryCollectionView reloadData];
+}
+
+- (void)shareItem:(UIButton *)shareButton{
+//    Items *item = (Items *)[self.dataSourceArray objectAtIndex:shareButton.tag];
+//    NSString *sharecodeApp =  @"This text is to test the sharing.";
+//    NSURL *url = [NSURL URLWithString:@"http://www.cheripo.com"];
+//    UIImage *image = [UIImage imageNamed:@"default_product_image.png"];
+//    UIActivityViewController *activityViewController =
+//    [[UIActivityViewController alloc] initWithActivityItems:@[sharecodeApp, url, image]
+//                                      applicationActivities:nil];
+//    [self.navigationController presentViewController:activityViewController
+//                                            animated:YES
+//                                          completion:^{
+//                                              // ...
+//                                          }];
 }
 
 
