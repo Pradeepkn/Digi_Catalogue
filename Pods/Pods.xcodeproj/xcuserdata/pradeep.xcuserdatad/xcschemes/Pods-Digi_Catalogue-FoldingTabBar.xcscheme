@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CC2F147253EDBB9C55012EC3"
-               BuildableName = "libPods-Digi_Catalogue-MBProgressHUD.a"
-               BlueprintName = "Pods-Digi_Catalogue-MBProgressHUD"
+               BlueprintIdentifier = "CCC66477253B9C89AAE8988A"
+               BuildableName = "libPods-Digi_Catalogue-FoldingTabBar.a"
+               BlueprintName = "Pods-Digi_Catalogue-FoldingTabBar"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
