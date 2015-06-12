@@ -35,8 +35,8 @@
     self.navigationController.navigationBarHidden = NO;
     Items *item = (Items *)[self.itemsArray objectAtIndex:self.selectedIndex];
     self.title = item.name;
-//
-//    [self.productImageView sd_setImageWithURL:[NSURL URLWithString:item.uri] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
+    NSString *productDetails = [NSString stringWithFormat:@"Name\t:\t %@\n Price \t:\t %@\n Purity \t:\t %@\n Category type \t:\t %@ \n Color Name \t:\t %@",item.name,item.price,item.purity_name,item.gender_name,item.color_name];
+    self.productDetailLabel.text = productDetails;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -94,10 +94,12 @@
 */
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSInteger currentOffset = scrollView.contentOffset.x/scrollView.frame.size.width;
-    Items *item = (Items *)[self.itemsArray objectAtIndex:currentOffset];
+    self.selectedIndex = scrollView.contentOffset.x/scrollView.frame.size.width;
+    Items *item = (Items *)[self.itemsArray objectAtIndex:self.selectedIndex];
     self.title = item.name;
-
+    NSString *productDetails = [NSString stringWithFormat:@"Name \t : \t %@\n Price \t :\t %@\n Purity \t : \t %@\n Design type \t : \t %@ \n Color Name \t : \t %@",item.name,item.price,item.purity_name,item.design_type_name,item.color_name];
+    self.productDetailLabel.text = productDetails;
 }
+
 
 @end
