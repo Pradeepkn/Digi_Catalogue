@@ -22,6 +22,6 @@
 @synthesize ring_size_name;
 @synthesize uri;
 @synthesize wearing_style_name;
-
+@synthesize purity_name;
 
 @end

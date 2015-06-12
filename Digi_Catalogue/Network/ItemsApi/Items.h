@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *ring_size_name;
 @property (nonatomic, strong) NSString *uri;
 @property (nonatomic, strong) NSString *wearing_style_name;
+@property (nonatomic, strong) NSString *purity_name;
 
 @end
 

@@ -71,9 +71,13 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
             if (!self.imagesArray) {
                 self.imagesArray = [[NSMutableArray alloc] init];
             }
-            if (!self.dataSourceArray) {
-                self.dataSourceArray = [[NSMutableArray alloc] init];
-            }
+            // If array is already present it's adding again an again to same array..
+            // Objects will start repeating after multiple api call.
+//            if (!self.dataSourceArray) {
+//                self.dataSourceArray = [[NSMutableArray alloc] init];
+//            }
+            
+            self.dataSourceArray = [NSMutableArray array];
             for (ListOfItems *listOfItems in collectionApi.listOfItems) {
                 for (Products *products in listOfItems.products) {
                     for (Items *items in products.items) {
@@ -83,7 +87,10 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
                 }
             }
             [self hideLoadingMode];
-            [self searchResults:type];
+            //[self searchResults:type];
+            
+            self.dataSourceArray = [NSMutableArray arrayWithArray:[self sortArrayForCurrentSearchOption]];
+            [self reloadCollectionView];
         }
     }];
 }
@@ -134,7 +141,7 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     Items *item = (Items *)[self.dataSourceArray objectAtIndex:indexPath.row];
   [cell.galleryImageView sd_setImageWithURL:[NSURL URLWithString:item.uri] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
   cell.imageTitle.text = @"Purity: 22 kr";
-  cell.priceLabel.text = [NSString stringWithFormat:@"Price: र %@", @"28,000"];
+  cell.priceLabel.text = [NSString stringWithFormat:@"Price: र %@", item.price];
     [cell.wishListButton addTarget:self action:@selector(addToWishList:) forControlEvents:UIControlEventTouchUpInside];
     [cell.shareButton addTarget:self action:@selector(shareItem:) forControlEvents:UIControlEventTouchUpInside];
     cell.wishListButton.tag = indexPath.row;
@@ -171,21 +178,26 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 #pragma mark - search delegates.
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+//    [self abortSearchingMode];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)theSearchBar {
+//    self.searchListArray = [NSMutableArray arrayWithArray:[self sortArrayForCurrentSearchOption]];
+//    [self doneSearchingClicked];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar {
+    
 }
 
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
+    
 }
 
-- (void)doneSearching_Clicked {
+- (void)doneSearchingClicked {
     _searchFlags.doneClicked = YES;
     _itemSearchBar.text = @"";
-    _searchFlags.searching = NO;
+    _searchFlags.searching = YES;
     [self reloadCollectionView];
 }
 
@@ -255,6 +267,27 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     [self reloadCollectionView];
 }
 
+
+- (NSArray *)sortArrayForCurrentSearchOption {
+    NSString *sortKey = nil;
+    if (_selectedSearchOption == SearchItemByPrice) {
+        sortKey = @"price";
+    }
+    else if (_selectedSearchOption == SearchItemByPurity) {
+        sortKey = @"purity_name";
+    }
+    else if (_selectedSearchOption == SearchItemByName) {
+        sortKey = @"name";
+    }
+    
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:YES selector:@selector(caseInsensitiveCompare:)];
+    NSArray *sortDescriptors = @[descriptor];
+    NSArray *sortedArray = [self.dataSourceArray sortedArrayUsingDescriptors:sortDescriptors];
+    
+    return sortedArray;
+}
+
+
 - (void)addToWishList:(UIButton *)wishListButton{
     Items *item = (Items *)[self.dataSourceArray objectAtIndex:wishListButton.tag];
     DataManager *dataManager = [DataManager sharedInstance];
@@ -275,9 +308,11 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     }
     if (!isObjectPresent) {
         [dataManager.favouritesArray addObject:item];
-    }else{
+    }
+    else {
         [dataManager.favouritesArray removeObject:item];
     }
+    
     [self.galleryCollectionView reloadData];
 }
 
