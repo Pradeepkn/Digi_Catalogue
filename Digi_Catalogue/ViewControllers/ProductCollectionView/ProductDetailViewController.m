@@ -33,10 +33,23 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
-    Items *item = (Items *)[self.itemsArray objectAtIndex:self.selectedIndex];
-//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.productImageView.frame];
-    [self.productImageView sd_setImageWithURL:[NSURL URLWithString:item.uri] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
-    
+//    Items *item = (Items *)[self.itemsArray objectAtIndex:self.selectedIndex];
+//
+//    [self.productImageView sd_setImageWithURL:[NSURL URLWithString:item.uri] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
+    CGFloat x_OffSet = self.productImageView.frame.origin.x;
+    for (int index = 0; index < self.itemsArray.count; index++) {
+        CGRect frame = self.productImageView.frame;
+        frame.origin.x = x_OffSet + (index * self.productScrollView.frame.size.width);
+        frame.size.width = self.productScrollView.frame.size.width - (x_OffSet*2);
+
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+        Items *item = (Items *)[self.itemsArray objectAtIndex:index];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:item.uri] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
+        [self.productScrollView addSubview:imageView];
+        [self.productScrollView setContentSize:CGSizeMake(index*self.productScrollView.frame.size.width + self.productScrollView.frame.size.width, self.productScrollView.frame.size.height)];
+    }
+    [self.productScrollView setContentOffset:CGPointMake(self.selectedIndex, 1)];
+    self.productImageView.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
