@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Digi_Catalogue-FoldingTabBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Digi_Catalogue-IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>32D806E30D0A0AB4C5FE8D0C</key>
+		<key>04AB1440C037E40633F5EAD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>395A51DD9476A7D8B0C0F130</key>
+		<key>1ECF56581F8C7B2B8CB58C4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E67734B86AD9EFBBD83E2BB</key>
+		<key>392EC97DCD1F3C2C6877B0FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC1C6C0D676326E4FDA18FA6</key>
+		<key>85EA1CC82A561F259CA1A063</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D13651F7BB54C72367D6A089</key>
+		<key>A1304425248BB7715ED68B05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D3E4B90767D8CDFBE3E88CF9</key>
+		<key>B1E50DA5DC0DE0B2766FC6E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F3A62179163C2D913F2C278C</key>
+		<key>DE0F1CCE7AD6FA771F8A9980</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF755CA0AA325741C489DA95</key>
 		<dict>
 			<key>primary</key>
 			<true/>

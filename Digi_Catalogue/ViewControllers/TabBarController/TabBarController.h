@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import <YALFoldingTabBarController.h>
 
-@interface TabBarController : UITabBarController
+@interface TabBarController : UITabBarController<UITabBarDelegate,UITabBarControllerDelegate>
 
 @end

@@ -11,6 +11,7 @@ pod 'AFNetworking', '~> 1.3.0'
 pod 'MBProgressHUD', '~> 0.8'
 # pod 'MagicalRecord', '~> 2.2'
 pod 'MagicalRecord', :git => 'https://github.com/magicalpanda/MagicalRecord.git', :tag => 'v2.3.0-beta.5'
+pod 'FoldingTabBar', '~> 1.0.0'
 # class object mapping
 #pod 'jastor', '~>0.2.1'
 #pod 'UPStackMenu'

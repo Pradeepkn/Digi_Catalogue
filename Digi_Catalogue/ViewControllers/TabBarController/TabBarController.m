@@ -13,6 +13,15 @@
 #import "FeedBackViewController.h"
 #import "DataManager.h"
 
+//model
+#import "YALTabBarItem.h"
+
+//controller
+#import "YALFoldingTabBarController.h"
+
+//helpers
+#import "YALAnimatingTabBarConstants.h"
+
 static NSString *const kMainStoryBoard = @"Main";
 static NSString *const kSplitViewStoryBoard = @"SplitViewStoryBoard";
 
@@ -56,7 +65,8 @@ static NSString *const kSplitViewStoryBoard = @"SplitViewStoryBoard";
   [tabbarItems addObject:feedbackVC];
 
   [self setViewControllers:tabbarItems animated:YES];
-  // Do any additional setup after loading the view.
+//    [self setupYALTabBarController];
+
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
@@ -86,6 +96,50 @@ static NSString *const kSplitViewStoryBoard = @"SplitViewStoryBoard";
         default:
             break;
     }
+}
+
+- (void)setupYALTabBarController {
+    
+    //prepare leftBarItems
+    YALTabBarItem *item1 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"nearby_icon"]
+                                                      leftItemImage:nil
+                                                     rightItemImage:nil];
+    
+    
+    YALTabBarItem *item2 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"profile_icon"]
+                                                      leftItemImage:[UIImage imageNamed:@"edit_icon"]
+                                                     rightItemImage:nil];
+    
+//    self.leftBarItems = @[item1, item2];
+    
+    //prepare rightBarItems
+    YALTabBarItem *item3 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"chats_icon"]
+                                                      leftItemImage:[UIImage imageNamed:@"search_icon"]
+                                                     rightItemImage:[UIImage imageNamed:@"new_chat_icon"]];
+    
+    
+    YALTabBarItem *item4 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"settings_icon"]
+                                                      leftItemImage:nil
+                                                     rightItemImage:nil];
+    
+    YALTabBarItem *item5 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"settings_icon"]
+                                                      leftItemImage:nil
+                                                     rightItemImage:nil];
+    
+//    self.rightBarItems = @[item3, item4, item5];
+//    
+//    self.centerButtonImage = [UIImage imageNamed:@"plus_icon"];
+//    
+//    self.selectedIndex = 2;
+//    self.delegate = self;
+//    //customize tabBarView
+//    self.tabBarView.extraTabBarItemHeight = YALExtraTabBarItemsDefaultHeight;
+//    self.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset;
+//    self.tabBarView.backgroundColor = [UIColor colorWithRed:94.0/255.0 green:91.0/255.0 blue:149.0/255.0 alpha:1];
+//    self.tabBarView.tabBarColor = [UIColor colorWithRed:72.0/255.0 green:211.0/255.0 blue:178.0/255.0 alpha:1];
+//    self.tabBarViewHeight = YALTabBarViewDefaultHeight;
+//    self.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets;
+//    self.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets;
 }
 
 
