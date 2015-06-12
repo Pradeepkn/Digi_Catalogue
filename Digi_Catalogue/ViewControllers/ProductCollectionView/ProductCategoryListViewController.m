@@ -253,7 +253,7 @@ canCollapseSection:(NSInteger)section {
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"ProductList" sender:nil];
+//    [self performSegueWithIdentifier:@"ProductList" sender:nil];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 40.0f;

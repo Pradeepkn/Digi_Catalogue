@@ -24,6 +24,7 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 @interface ProductCollectionView () {
   NSMutableArray *_galleryItems;
     HomeViewType homeType;
+    NSInteger selectedIndex;
 }
 
 @property(weak, nonatomic) IBOutlet UICollectionView *galleryCollectionView;
@@ -138,11 +139,12 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
     [cell.shareButton addTarget:self action:@selector(shareItem:) forControlEvents:UIControlEventTouchUpInside];
     cell.wishListButton.tag = indexPath.row;
     cell.shareButton.tag = indexPath.row;
+    selectedIndex = indexPath.row;
   return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  //  selectedIndex = indexPath.row;
+    selectedIndex = indexPath.row;
     [self navigateToProductDetailsViewController];
 }
 
@@ -155,6 +157,8 @@ static NSString *const kEKProductDetailsStoryboard = @"ProductDetailStoryboard";
 - (void)navigateToProductDetailsViewController {
     UIStoryboard *productDetailStoryBoard = [UIStoryboard storyboardWithName:kEKProductDetailsStoryboard bundle:nil];
     ProductDetailViewController *productDetailsViewController = (ProductDetailViewController*)[productDetailStoryBoard instantiateInitialViewController];
+    productDetailsViewController.itemsArray = self.dataSourceArray;
+    productDetailsViewController.selectedIndex = selectedIndex;
     [self.navigationController pushViewController:productDetailsViewController animated:YES];
 }
 

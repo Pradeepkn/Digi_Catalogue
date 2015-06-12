@@ -10,4 +10,7 @@
 
 @interface ProductDetailViewController : UIViewController
 
+@property (nonatomic, strong) NSMutableArray *itemsArray;
+@property (nonatomic, assign) NSInteger selectedIndex;
+
 @end

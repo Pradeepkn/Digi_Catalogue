@@ -7,7 +7,10 @@
 //
 
 #import "ProductDetailViewController.h"
+#import "UIImage+ProportionalFill.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "DataManager.h"
+#import "Items.h"
 
 @interface ProductDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *productScrollView;
@@ -30,6 +33,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    Items *item = (Items *)[self.itemsArray objectAtIndex:self.selectedIndex];
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.productImageView.frame];
+    [self.productImageView sd_setImageWithURL:[NSURL URLWithString:item.uri] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
